@@ -3,19 +3,9 @@
     <nav class="header">
         <ul class="headerList headerLeft">
             <li><a><img src="/static/img/csdnLog.png"/></a></li>
-            <li><a>博客</a></li>
-            <li><a>学院</a></li>
-            <li><a>下载</a></li>
-            <li><a>图文课</a></li>
-            <li><a>论坛</a></li>
-            <li><a>APP</a></li>
-            <li><a>问答</a></li>
-            <li><a>商城</a></li>
-            <li><a>VIP会员</a></li>
-            <li><a>活动</a></li>
-            <li><a>招聘</a></li>
-            <li><a>ITeye</a></li>
-            <li><a>GitChat</a></li>
+            <li v-for="(item,index) in listLeft" :key="index">
+                <a>{{item}}</a>
+            </li>
         </ul>
         <ul class="headerList headerRight">
             <li>
@@ -40,7 +30,7 @@ export default {
     name: 'Header',
     data() {
       return {
-        
+        listLeft:['博客','学院','下载','图文课','论坛','APP','问答','商城','VIP会员','活动','招聘','ITeye','GitChat']
       };
     },
     methods: {
