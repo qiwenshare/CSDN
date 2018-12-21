@@ -306,7 +306,7 @@ export default {
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04)
     a
       display block
-      height:200px
+      height:206px
   .todayRecommendWrapper
     padding:16px
     background-color #fff
