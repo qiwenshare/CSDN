@@ -1,12 +1,20 @@
 <template>
   <div class="mainWrapper">
-      this is main recomend
+      <main-adv></main-adv>
+      <essayList></essayList>
   </div>
 </template>
 
 <script>
+import mainAdv from './advertisement'
+import essayList from '@/pages/common/essayList'
+
 export default {
-  name:'homepageMain'
+  name:'homepageMain',
+  components:{
+    mainAdv,
+    essayList
+  }
 }
 </script>
 
