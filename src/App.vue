@@ -12,6 +12,6 @@ export default {
 
 <style lang="stylus" scoped>
 #app
-  width:1411px
+  width:100%
   background: #f5f6f7
 </style>

@@ -24,7 +24,7 @@ export default {
 <style lang="stylus" scoped>
 .sidebarWrapper
   width: 96px
-  height:693px
+  height:692px
   background-color: #fff
   color: #707070
   margin-right: 14px
@@ -32,6 +32,8 @@ export default {
   line-height: 32px
   font-size:14px
   position: relative
+  top:0
+  left:0
   padding: 6px 0
   -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04)
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04)
