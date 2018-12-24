@@ -1,10 +1,13 @@
 <template>
   <div class="rightWrapper">
-    <div class="advertisement1">
-      <a>
-        <img src="@/assets/img/common/right/recommendRightImg1.jpg" />
-      </a>
-    </div>
+    <swiper class="advertisement1" :options="swiperOption1">
+      <!-- slides -->
+      <swiper-slide class="slide" v-for="(item,index) of swiperImgList1" :key="index">
+        <img class="swipe-img" :src="item.imgUrl">
+      </swiper-slide>
+      <!-- Optional controls -->
+      <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
     <div class="todayRecommendWrapper">
       <div class="todayRecommendTitle">
         <span>|</span>
@@ -60,13 +63,21 @@
         <span class="magazineTitle">GitChat极客书</span>
         <div class="magazineOpera">
           <span class="operaText">我要订阅</span>
-          <span class="operaLeft"><</span>
-          <span class="operaRight">></span>
+          <!-- <div class="swiper-button-prev swiper-button" slot="button-prev"></div>
+          <div class="swiper-button-next" slot="button-next"></div> -->
         </div>
       </h3>
-      <div class="magazineImg">
-        <img src="" />
-      </div>
+      <swiper class="magazineSwiper" :options="swiperOption2">
+        <!-- slides -->
+        <swiper-slide class="slide" v-for="(item,index) of swiperImgList2" :key="index">
+          <img class="swipe-img" :src="item.imgUrl">
+          <div class="swipe-text">
+            <h4>{{item.title}}</h4>
+            <p>{{item.content}}</p>
+          </div>
+        </swiper-slide>
+        <!-- Optional controls -->
+      </swiper>
     </div>
     <div class="advertisement2">
       <img src="@/assets/img/common/right/advertisement2.png"/>
@@ -291,7 +302,48 @@ export default {
           desc:'2018 OPPO开发者大会',
           status:'北京'
         }
-      ]
+      ],
+      swiperOption1:{
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+        },
+        autoplay: true,
+        effect : 'fade',
+      },
+      swiperImgList1:[
+        { imgUrl:require("@/assets/img/common/right/recommendRightImgSwiper/recommendRightImg1.jpg")},
+        { imgUrl:require("@/assets/img/common/right/recommendRightImgSwiper/recommendRightImg2.jpg")},
+        { imgUrl:require("@/assets/img/common/right/recommendRightImgSwiper/recommendRightImg3.jpg")},
+        { imgUrl:require("@/assets/img/common/right/recommendRightImgSwiper/recommendRightImg4.jpg")},
+        { imgUrl:require("@/assets/img/common/right/recommendRightImgSwiper/recommendRightImg5.jpg")}
+      ],
+      swiperOption2:{
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+        },
+        autoplay: true,
+        loop : true,
+      },
+      swiperImgList2:[
+        { imgUrl:require("@/assets/img/common/right/magazineSwiper/magazineImg1.png"),
+          title:'携程技术年度合集（上册）',
+          content:'这本小书的内容来自携程技术中心微信公众号在 2017 年发布的文章。包含了架构、大数据、前端、安全、运维、云计算、数据库等领域，也包含了 2017 年携程技术沙龙上的干货内容。'
+        },
+        { imgUrl:require("@/assets/img/common/right/magazineSwiper/magazineImg2.png"),
+          title:'深入浅出 Spring Boot 2.x',
+          content:'本书内容紧扣互联网企业的实际要求，从全注解下 Spring 知识讲到 Spring Boot 的企业级开发，对于 Java 开发人员，尤其是初学 Spring Boot 的人员和需要从传统 Spring 转向 Spring Boot 开发的技术人员，'
+        },
+        { imgUrl:require("@/assets/img/common/right/magazineSwiper/magazineImg3.png"),
+          title:'Python 爬虫开发与项目实战',
+          content:'本书从基本的爬虫原理开始讲解，通过介绍 Pthyon 编程语言和 Web 前端基础知识引领读者入门，之后介绍动态爬虫原理以及 Scrapy 爬虫框架，最后介绍大规模数据下分布式爬虫的设计以及 PySpider '
+        },
+        { imgUrl:require("@/assets/img/common/right/magazineSwiper/magazineImg4.png"),
+          title:'深度学习入门：基于 Python 的理论与实现',
+          content:'本书是深度学习真正意义上的入门书，深入浅出地剖析了深度学习的原理和相关技术。书中使用Python3，尽量不依赖外部库或工具，从基本的数学知识出发，带领读者从零创建一个经典的深度学'
+        }
+      ],
     }
   }
 }
@@ -301,12 +353,47 @@ export default {
 @import "~@/assets/styles/mixins.styl"
 .rightWrapper
   width 300px
+  height:3300px
   .advertisement1
     margin-bottom:8px
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04)
-    a
-      display block
-      height:206px
+    width:300px
+    height:206px
+    position:relative
+    left 0
+    top 0
+    .slide
+      width 100%
+      height 200px
+      position relative
+      left 0
+      top 0
+      display flex
+      .swipe-img
+        width 92px
+        height 124px
+    .swiper-pagination
+      height:20px
+      position absolute
+      left:0
+      bottom:-3px
+      ellipsis()
+      &>>> .swiper-pagination-bullet
+        width 59px !important
+        height 3px !important
+        border-radius 0
+        margin:0 1px
+        background-color #aaa
+        opacity 1
+        width 6px
+        height:6px
+      &>>> .swiper-pagination-bullet-active
+        width 60px
+        height 3px
+        border-radius 0
+        background-color #c92027
+        transition:background-color 0.5s;
+	      -webkit-transition:background-color 0.5s; /* Safari */
   .todayRecommendWrapper
     padding:16px
     background-color #fff
@@ -432,6 +519,7 @@ export default {
     margin-bottom: 8px;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04)
     h3
+      margin-bottom 14px 
       font-size:14px
       font-weight:normal
       display:flex
@@ -443,9 +531,31 @@ export default {
         text-align:right
         .operaText
           color: #349edf
-    .magazineImg
+    .magazineSwiper
       height:124px
-      background-color pink
+      width:100%
+      .slide
+        width 100%
+        height 100%
+        display:flex
+        .swipe-img
+          display block
+          width 92px
+          height 124px
+          border-radius: 4px;
+          margin-right 14px
+        .swipe-text
+          width:162px
+          height:124px
+          h4
+            font-size:12px
+            color: #4f4f4f;
+          p
+            max-height: 72px;
+            overflow: hidden;
+            font-size: 12px;
+            color: #707070;
+            line-height: 18px;
   .advertisement2
     margin-bottom:8px
     height 250px

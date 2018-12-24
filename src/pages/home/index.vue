@@ -7,11 +7,13 @@
             <commend-top></commend-top>
             <div class="contentMain">
               <homepage-main></homepage-main>
-              <commend-right></commend-right>
+              <recommend-right id="recommendRight"></recommend-right>
             </div>
           </div>
         </div>
         <go-top-icon id="goTop"></go-top-icon>
+        <free-vip-icon id="freeVip"></free-vip-icon>
+        <adv-popup></adv-popup>
     </div>
 </template>
 
@@ -19,9 +21,11 @@
 import Header from '@/pages/common/header'
 import sidebar from '@/pages/common/sidebar'
 import commendTop from '@/pages/common/recommend/top'
-import commendRight from '@/pages/common/recommend/right'
+import recommendRight from '@/pages/common/recommend/right'
 import homepageMain from './components/main'
 import goTopIcon from '@/pages/common/goTop'
+import freeVipIcon from '@/pages/common/freeVIP'
+import advPopup from '@/pages/common/advPopup'
 
 $(document).ready(function(){
   var body = document.getElementsByTagName("body")[0];
@@ -30,9 +34,11 @@ $(document).ready(function(){
     //回到顶部图标
     if(netScrollTop != 0){
       $("#goTop").css("display",'block');
+      $("#freeVip").css("top",'430px');
     }
     if(netScrollTop == 0){
       $("#goTop").css("display",'none');
+      $("#freeVip").css("top",'500px');
     }
     //左侧导航栏固定图标
     if(netScrollTop >= 128) {
@@ -43,6 +49,24 @@ $(document).ready(function(){
       $("#sidebar").css("position",'relative');
       $("#sidebar").css("top",'0');
     }
+    //右侧推荐固定
+    if(netScrollTop >= 2835) {
+    //       position: fixed;
+    // bottom: 0;
+    // top: auto;
+    // left: 967.5;
+    // left: 967.5px;
+      $("#recommendRight").css("position",'fixed');
+      $("#recommendRight").css("bottom",'0');
+      $("#recommendRight").css("top",'auto');
+      $("#recommendRight").css("left",'966.5px');
+    }
+    if(netScrollTop < 2835) {
+      $("#recommendRight").css("position",'relative');
+      $("#recommendRight").css("bottom",'0');
+      $("#recommendRight").css("left",'0');
+      $("#recommendRight").css("top",'0');
+    }
   }
 });
 
@@ -52,9 +76,11 @@ export default {
     Header,
     sidebar,
     commendTop,
-    commendRight,
+    recommendRight,
     homepageMain,
-    goTopIcon
+    goTopIcon,
+    freeVipIcon,
+    advPopup
   }
 }
 </script>
