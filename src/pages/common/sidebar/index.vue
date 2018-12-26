@@ -16,30 +16,93 @@ export default {
   data () {
     return {
       sidebarList:[
-        { name:'推荐',sidebarLink:'/' },
-        { name:'最新文章',sidebarLink:'/nav/newArticles' },
-        { name:'关注',sidebarLink:'/nav/watchers' },
-        { name:'资讯',sidebarLink:'/nav/news' },
-        { name:'人工智能',sidebarLink:'/nav/ai' },
-        { name:'云计算/大数据',sidebarLink:'/nav/cloud' },
-        { name:'区块链',sidebarLink:'/nav/newArticles' },
-        { name:'数据库',sidebarLink:'/nav/database' },
-        { name:'程序人生',sidebarLink:'/nav/career' },
-        { name:'游戏开发',sidebarLink:'/nav/game' },
-        { name:'研发管理',sidebarLink:'/nav/engineering' },
-        { name:'前端',sidebarLink:'/nav/web' },
-        { name:'移动开发',sidebarLink:'/nav/mobile' },
-        { name:'物联网',sidebarLink:'/nav/iot' },
-        { name:'运维',sidebarLink:'/nav/ops' },
-        { name:'计算机基础',sidebarLink:'/nav/fund' },
-        { name:'编程语言',sidebarLink:'/nav/lang' },
-        { name:'架构',sidebarLink:'/nav/arch' },
-        { name:'音视频开发',sidebarLink:'/nav/avi' },
-        { name:'安全',sidebarLink:'/nav/sec' },
-        { name:'其他',sidebarLink:'/nav/other' },
+        { name:'推荐',
+          isActive:false,
+          sidebarLink:'/' 
+        },
+        { name:'最新文章',
+          isActive:false,
+          sidebarLink:'/nav/newArticles' 
+        },
+        { name:'关注',
+          isActive:false,
+          sidebarLink:'/nav/watchers' 
+        },
+        { name:'资讯',
+          isActive:false,
+          sidebarLink:'/nav/news' 
+        },
+        { name:'人工智能',
+          isActive:false,
+          sidebarLink:'/nav/ai' 
+        },
+        { name:'云计算/大数据',
+          isActive:false,
+          sidebarLink:'/nav/cloud' 
+        },
+        { name:'区块链',
+          isActive:false,
+          sidebarLink:'/nav/newArticles' 
+        },
+        { name:'数据库',
+          isActive:false,
+          sidebarLink:'/nav/database' 
+        },
+        { name:'程序人生',
+          isActive:false,
+          sidebarLink:'/nav/career' 
+        },
+        { name:'游戏开发',
+          isActive:false,
+          sidebarLink:'/nav/game' 
+        },
+        { name:'研发管理',
+          isActive:false,
+          sidebarLink:'/nav/engineering'
+        },
+        { name:'前端',
+          isActive:false,
+          sidebarLink:'/nav/web' 
+        },
+        { name:'移动开发',
+          isActive:false,
+          sidebarLink:'/nav/mobile' 
+        },
+        { name:'物联网',
+          isActive:false,
+          sidebarLink:'/nav/iot' 
+        },
+        { name:'运维',
+          isActive:false,
+          sidebarLink:'/nav/ops'
+        },
+        { name:'计算机基础',
+          isActive:false,
+          sidebarLink:'/nav/fund' 
+        },
+        { name:'编程语言',
+          isActive:false,
+          sidebarLink:'/nav/lang' 
+        },
+        { name:'架构',
+          isActive:false,
+          sidebarLink:'/nav/arch' 
+        },
+        { name:'音视频开发',
+          isActive:false,
+          sidebarLink:'/nav/avi' 
+        },
+        { name:'安全',
+          isActive:false,
+          sidebarLink:'/nav/sec' 
+        },
+        { name:'其他',
+          isActive:false,
+          sidebarLink:'/nav/other' 
+        },
       ]
     }
-  }  
+  }
 }
 </script>
 
