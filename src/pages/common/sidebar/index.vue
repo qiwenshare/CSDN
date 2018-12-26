@@ -44,7 +44,7 @@ export default {
         },
         { name:'区块链',
           isActive:false,
-          sidebarLink:'https://www.baidu.com' 
+          sidebarLink:'/nav/blockchain' 
         },
         { name:'数据库',
           isActive:false,
