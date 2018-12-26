@@ -63,12 +63,15 @@
         <span class="magazineTitle">GitChat极客书</span>
         <div class="magazineOpera">
           <span class="operaText">我要订阅</span>
-          <!-- <div class="swiper-button-prev swiper-button" slot="button-prev"></div>
-          <div class="swiper-button-next" slot="button-next"></div> -->
+          <div class="swiper-button-prev swiper-button" slot="button-prev">
+            <span class="iconfont prev">&#xe8ef;</span>
+          </div>
+          <div class="swiper-button-next swiper-button" slot="button-next">
+            <span class="iconfont next">&#xe8f0;</span>
+          </div>
         </div>
       </h3>
       <swiper class="magazineSwiper" :options="swiperOption2">
-        <!-- slides -->
         <swiper-slide class="slide" v-for="(item,index) of swiperImgList2" :key="index">
           <img class="swipe-img" :src="item.imgUrl">
           <div class="swipe-text">
@@ -76,7 +79,6 @@
             <p>{{item.content}}</p>
           </div>
         </swiper-slide>
-        <!-- Optional controls -->
       </swiper>
     </div>
     <div class="advertisement2">
@@ -310,6 +312,7 @@ export default {
         },
         autoplay: true,
         effect : 'fade',
+        loop : true,
       },
       swiperImgList1:[
         { imgUrl:require("@/assets/img/common/right/recommendRightImgSwiper/recommendRightImg1.jpg")},
@@ -319,12 +322,12 @@ export default {
         { imgUrl:require("@/assets/img/common/right/recommendRightImgSwiper/recommendRightImg5.jpg")}
       ],
       swiperOption2:{
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'bullets',
-        },
         autoplay: true,
         loop : true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
       },
       swiperImgList2:[
         { imgUrl:require("@/assets/img/common/right/magazineSwiper/magazineImg1.png"),
@@ -370,8 +373,8 @@ export default {
       top 0
       display flex
       .swipe-img
-        width 92px
-        height 124px
+        width 100%
+        height 100%
     .swiper-pagination
       height:20px
       position absolute
@@ -527,10 +530,26 @@ export default {
         color: #707070;
         width:100px
       .magazineOpera
+        padding-left: 50px;
         flex:2
         text-align:right
+        display: flex;
         .operaText
           color: #349edf
+          padding-right: 10px;
+        .swiper-button
+          display block !important
+          background-image none
+          position: relative;
+          top: 0;
+          left: 0;
+          margin: 0;
+          height: 19px;
+          width: 19px;
+          color:#ccc
+          margin-right:5px
+          &:hover
+            color:#349edf
     .magazineSwiper
       height:124px
       width:100%
