@@ -3,7 +3,9 @@
     <nav class="sidebar">
       <ul class="sidebarList">
         <li v-for="(item,index) of sidebarList" :key="index">
-          <a :href="item.sidebarLink">{{item.name}}</a>
+          <router-link :to="item.sidebarLink" class="sidebarItem" tag="div">
+            {{item.name}}
+          </router-link>
         </li>
       </ul>
     </nav>
@@ -18,7 +20,7 @@ export default {
       sidebarList:[
         { name:'推荐',
           isActive:false,
-          sidebarLink:'/' 
+          sidebarLink:'/index' 
         },
         { name:'最新文章',
           isActive:false,
@@ -42,7 +44,7 @@ export default {
         },
         { name:'区块链',
           isActive:false,
-          sidebarLink:'/nav/newArticles' 
+          sidebarLink:'https://www.baidu.com' 
         },
         { name:'数据库',
           isActive:false,
@@ -107,6 +109,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.router-link-active
+  background: #f44444;
+  color: #fff
 .sidebarWrapper
   width: 96px
   height:692px
@@ -122,11 +127,11 @@ export default {
   padding: 6px 0
   -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04)
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04)
-  a
+  .sidebarItem
     display block
-    width:100%
-    height 100%
-    color #707070
+    width 100%
+    height 98%
+    margin-bottom 1px
     &:hover
       background-color:#f44444
       color #fff

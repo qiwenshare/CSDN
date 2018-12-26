@@ -32,6 +32,11 @@ export default new Router({
       component: home
     },
     {
+      path: '/index',
+      name: 'home',
+      component: home
+    },
+    {
       path: '/nav/ai',
       name: 'ai',
       component: ai

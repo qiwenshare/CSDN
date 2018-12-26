@@ -1,24 +1,24 @@
 <template>
-    <div class="homepageWrapper">
-        <Header></Header>
-        <div class="contentSidebar">
-          <sidebar id="sidebar"></sidebar>
-          <div class="contentWrapper">
-            <recommend-top :list="recommendTopList"></recommend-top>
-            <div class="contentMain">
-              <div class="mainAdv">
-                <main-adv></main-adv>
-                <new-info></new-info>
-                <homepage-main></homepage-main>
-              </div>
-              <recommend-right id="recommendRight"></recommend-right>
+  <div class="homepageWrapper">
+      <Header></Header>
+      <div class="contentSidebar">
+        <sidebar id="sidebar"></sidebar>
+        <div class="contentWrapper">
+          <recommend-top :list="recommendTopList"></recommend-top>
+          <div class="contentMain">
+            <div class="mainAdv">
+              <main-adv></main-adv>
+              <new-info></new-info>
+              <homepage-main></homepage-main>
             </div>
+            <recommend-right id="recommendRight"></recommend-right>
           </div>
         </div>
-        <go-top-icon id="goTop"></go-top-icon>
-        <free-vip-icon id="freeVip"></free-vip-icon>
-        <adv-popup></adv-popup>
-    </div>
+      </div>
+      <go-top-icon id="goTop"></go-top-icon>
+      <free-vip-icon id="freeVip"></free-vip-icon>
+      <adv-popup></adv-popup>
+  </div>
 </template>
 
 <script>
@@ -57,11 +57,6 @@ $(document).ready(function(){
     }
     //右侧推荐固定
     if(netScrollTop >= 2835) {
-    //       position: fixed;
-    // bottom: 0;
-    // top: auto;
-    // left: 967.5;
-    // left: 967.5px;
       $("#recommendRight").css("position",'fixed');
       $("#recommendRight").css("bottom",'0');
       $("#recommendRight").css("top",'auto');
