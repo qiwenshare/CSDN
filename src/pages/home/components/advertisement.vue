@@ -158,5 +158,4 @@ export default {
           ellipsis()
       &:last-child
         margin-top:2px
-        
 </style>

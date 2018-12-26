@@ -368,6 +368,7 @@ export default {
 @import "~@/assets/styles/mixins.styl"
 .contentListWrapper
   background-color:pink
+  width:100%
   .contentList
     .essayLi
       padding:18px 24px

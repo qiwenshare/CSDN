@@ -27,7 +27,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-// @import "~@/assets/styles/mixins.styl"
 .advPopupWrapper
   position fixed
   bottom:200px
@@ -43,6 +42,7 @@ export default {
   border-radius: 2px;
   width 320px
   height 300px 
+  z-index 99
   .close
     background-color #666
     width 16px

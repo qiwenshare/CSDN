@@ -1,6 +1,6 @@
 <template>
   <div class="topWrapper">
-      <div v-for="(item,index) of imgList" :key="index">
+      <div v-for="(item,index) of list" :key="index">
         <a :class="item.name">
           <img :src="item.imgUrl"/>
           <div class="advertisementIcon">广告</div>
@@ -12,17 +12,8 @@
 <script>
 export default {
   name:'recommendTop',
-  data () {
-    return {
-      imgList:[
-        { name:'img1',
-          imgUrl:require("@/assets/img/common/top/recommendTopImg1.png")
-        },
-        { name:'img2',
-          imgUrl:require("@/assets/img/common/top/recommendTopImg2.png")
-        }
-      ]
-    }
+  props:{
+    list: Array
   }
 }
 </script>

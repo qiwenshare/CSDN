@@ -6,10 +6,8 @@
           <div class="contentWrapper">
             <recommend-top :list="recommendTopList"></recommend-top>
             <div class="contentMain">
-              <div class="mainAdv">
-                <main-adv></main-adv>
-                <new-info></new-info>
-                <homepage-main></homepage-main>
+              <div class="contentList">
+                <content-list></content-list>
               </div>
               <recommend-right id="recommendRight"></recommend-right>
             </div>
@@ -26,9 +24,7 @@ import Header from '@/pages/common/header'
 import sidebar from '@/pages/common/sidebar'
 import recommendTop from '@/pages/common/recommend/top'
 import recommendRight from '@/pages/common/recommend/right'
-import mainAdv from './components/advertisement'
-import newInfo from './components/newInfo'
-import homepageMain from './components/main'
+import contentList from '@/pages/common/contentList'
 import goTopIcon from '@/pages/common/goTop'
 import freeVipIcon from '@/pages/common/freeVIP'
 import advPopup from '@/pages/common/advPopup'
@@ -77,27 +73,25 @@ $(document).ready(function(){
 });
 
 export default {
-  name: 'home',
+  name: 'newArticles',
   components: {
     Header,
     sidebar,
     recommendTop,
     recommendRight,
-    mainAdv,
-    newInfo,
-    homepageMain,
+    contentList,
     goTopIcon,
     freeVipIcon,
     advPopup
   },
   data () {
-    return {
+    return{
       recommendTopList:[
         { name:'img1',
-          imgUrl:require("@/assets/img/common/top/recommendTopImg1.png")
+          imgUrl:require("@/assets/img/sidenav/newArticles/adv1.jpg")
         },
         { name:'img2',
-          imgUrl:require("@/assets/img/common/top/recommendTopImg2.png")
+          imgUrl:require("@/assets/img/sidenav/newArticles/adv2.png")
         }
       ]
     }
@@ -124,7 +118,7 @@ export default {
       width:1074px
       .contentMain
         display flex
-        .mainAdv
-          width:760px
-          margin-right 14px
+      .contentList
+        width:760px
+        margin-right 14px
 </style>

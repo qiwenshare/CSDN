@@ -3,7 +3,7 @@
     <nav class="sidebar">
       <ul class="sidebarList">
         <li v-for="(item,index) of sidebarList" :key="index">
-          <a>{{item}}</a>
+          <a :href="item.sidebarLink">{{item.name}}</a>
         </li>
       </ul>
     </nav>
@@ -15,7 +15,29 @@ export default {
   name:'sidebar',
   data () {
     return {
-      sidebarList:['推荐','最新文章','关注','资讯','人工智能','云计算/大数据','区块链','数据库','程序人生','游戏开发','研发管理','前端','移动开发','物联网','运维','计算机基础','编程语言','架构','音视频开发','安全','其他']
+      sidebarList:[
+        { name:'推荐',sidebarLink:'/' },
+        { name:'最新文章',sidebarLink:'/nav/newArticles' },
+        { name:'关注',sidebarLink:'/nav/newArticles' },
+        { name:'资讯',sidebarLink:'/nav/newArticles' },
+        { name:'人工智能',sidebarLink:'/nav/newArticles' },
+        { name:'云计算/大数据',sidebarLink:'/nav/newArticles' },
+        { name:'区块链',sidebarLink:'/nav/newArticles' },
+        { name:'数据库',sidebarLink:'/nav/newArticles' },
+        { name:'程序人生',sidebarLink:'/nav/newArticles' },
+        { name:'游戏开发',sidebarLink:'/nav/newArticles' },
+        { name:'研发管理',sidebarLink:'/nav/newArticles' },
+        { name:'前端',sidebarLink:'/nav/newArticles' },
+        { name:'移动开发',sidebarLink:'/nav/newArticles' },
+        { name:'物联网',sidebarLink:'/nav/newArticles' },
+        { name:'运维',sidebarLink:'/nav/newArticles' },
+        { name:'计算机基础',sidebarLink:'/nav/newArticles' },
+        { name:'编程语言',sidebarLink:'/nav/newArticles' },
+        { name:'架构',sidebarLink:'/nav/newArticles' },
+        { name:'音视频开发',sidebarLink:'/nav/newArticles' },
+        { name:'安全',sidebarLink:'/nav/newArticles' },
+        { name:'其他',sidebarLink:'/nav/newArticles' },
+      ]
     }
   }  
 }
@@ -41,6 +63,7 @@ export default {
     display block
     width:100%
     height 100%
+    color #707070
     &:hover
       background-color:#f44444
       color #fff
