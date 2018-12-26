@@ -72,7 +72,7 @@ $(document).ready(function(){
 });
 
 export default {
-  name: 'newArticles',
+  name: 'web',
   components: {
     Header,
     sidebar,

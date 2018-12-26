@@ -52,11 +52,6 @@ $(document).ready(function(){
     }
     //右侧推荐固定
     if(netScrollTop >= 2835) {
-    //       position: fixed;
-    // bottom: 0;
-    // top: auto;
-    // left: 967.5;
-    // left: 967.5px;
       $("#recommendRight").css("position",'fixed');
       $("#recommendRight").css("bottom",'0');
       $("#recommendRight").css("top",'auto');
@@ -72,7 +67,7 @@ $(document).ready(function(){
 });
 
 export default {
-  name: 'newArticles',
+  name: 'watchers',
   components: {
     Header,
     sidebar,

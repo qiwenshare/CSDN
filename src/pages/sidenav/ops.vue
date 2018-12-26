@@ -72,7 +72,7 @@ $(document).ready(function(){
 });
 
 export default {
-  name: 'newArticles',
+  name: 'ops',
   components: {
     Header,
     sidebar,
@@ -87,7 +87,7 @@ export default {
     return{
       recommendTopList:[
         { name:'img1',
-          imgUrl:require("@/assets/img/sidenav/newArticles/adv1.jpg")
+          imgUrl:require("@/assets/img/sidenav/ops/adv1.jpg")
         },
         { name:'img2',
           imgUrl:require("@/assets/img/sidenav/newArticles/adv2.png")
