@@ -14,7 +14,26 @@
         <div class="advertisementIcon">广告</div>
       </a>
     </div>
-    <div class="todayRecommendWrapper">
+    <div class="cloudchainCount" v-if="recommendRight == 'navBlockChain'">
+      <h2 class="countTitle border-bottom">CSDN区块链社区</h2>
+      <ul class="countList">
+        <li v-for="(item,index) of countList" :key="index" class="countItem">
+          <div class="itemLeft">
+            {{item.left.name}}
+            <span>{{item.left.num}}</span>
+          </div>
+          <div class="itemRight">
+            {{item.right.name}}
+            <span>{{item.right.num}}</span>
+          </div>
+        </li>
+        <div class="wechatWrapper">
+          关注区块链大本营:
+          <span class="iconfont wechat">&#xe660;</span>
+        </div>
+      </ul>
+    </div>
+    <div class="todayRecommendWrapper" v-if="recommendRight != 'navBlockChain'">
       <div class="todayRecommendTitle">
         <span>|</span>
         <h3>今日推荐</h3>
@@ -33,7 +52,7 @@
         </a>
       </div>
     </div>
-    <div class="voteWrapper">
+    <div class="voteWrapper" v-if="recommendRight != 'navBlockChain'">
       <div class="voteImg" :style="voteBackground">
         <a>
           <img class="viewpoint" src="@/assets/img/common/right/viewpoint.png"/>
@@ -64,7 +83,7 @@
         </li>
       </ul>
     </div>
-    <div class="magazineWrapper">
+    <div class="magazineWrapper" v-if="recommendRight != 'navBlockChain'">
       <h3>
         <span class="magazineTitle">GitChat极客书</span>
         <div class="magazineOpera">
@@ -87,7 +106,7 @@
         </swiper-slide>
       </swiper>
     </div>
-    <div class="advertisement2">
+    <div class="advertisement2" v-if="recommendRight != 'navBlockChain'">
       <img src="@/assets/img/common/right/advertisement2.png"/>
       <div class="advertisementIcon">广告</div>
     </div>
@@ -182,11 +201,23 @@
 export default {
   name:'recommendRight',
   props :{
-    fromLink:String
+    fromLink:String,
+    recommendRight:String
   },
   data () {
     return {
       a1ExHomeImgUrl:require("@/assets/img/common/right/a1ExHome/a1ExHome.jpg"),
+      countList:[
+        { left:{name:'总用户数',num:'180万'},
+          right:{name:'总博文数',num:'56641'}
+        },
+        { left:{name:'上月博文数',num:'2305'},
+          right:{name:'上月PV',num:'347万'}
+        },
+        { left:{name:'微信公众号订阅数',num:'36万'},
+          right:{name:'',num:''}
+        }
+      ],
       todayRecommendList: [
         { name:'listItem',
           desc:'报名 | Workshop：零基础实战智能合约开发',
@@ -408,7 +439,6 @@ export default {
         transition:background-color 0.5s;
 	      -webkit-transition:background-color 0.5s; /* Safari */
   .advertisement1ExHome
-    margin-bottom:8px
     height 250px
     position relative
     left 0
@@ -431,6 +461,55 @@ export default {
         color:#ccc
         font-size:10px
         text-align:center
+  .cloudchainCount
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
+    margin-bottom: 8px;
+    padding: 14px 16px;
+    color:#4d4d4d
+    .countTitle
+      padding-bottom: 8px;
+      font-size: 14px;
+      font-weight: 400;
+    .countList
+      font-size:14px
+      .countItem
+        height:40px
+        line-height: 40px;
+        text-align: left;
+        position:relative
+        left:0
+        top:0
+        text-align:left
+        border-bottom: 1px dotted #ccc;
+        .itemLeft
+          position:absolute
+          left:0
+          top:0
+          span
+            font-size:12px
+            color:#e3635d
+            padding-left:12px
+        .itemRight
+          width 110px
+          position:absolute
+          right:0
+          top:0
+          span
+            font-size:12px
+            color:#e3635d
+            padding-left:12px
+            position:absolute
+            right:0
+            top:0
+      .wechatWrapper
+        padding-top:10px
+        .wechat
+          font-size:14px
+          color:#333
+          cursor:pointer
+          &:hover
+            color:#3db817
   .todayRecommendWrapper
     padding:16px
     background-color #fff

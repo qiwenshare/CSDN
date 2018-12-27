@@ -11,7 +11,7 @@
                 <main-adv></main-adv>
                 <blockchain-main></blockchain-main>
               </div>
-              <recommend-right id="recommendRight"></recommend-right>
+              <recommend-right id="recommendRight" :recommendRight="recommendRight"></recommend-right>
             </div>
           </div>
         </div>
@@ -94,7 +94,8 @@ export default {
         { name:'img2',
           imgUrl:require("@/assets/img/sidenav/newArticles/adv2.png")
         }
-      ]
+      ],
+      recommendRight:'navBlockChain'
     }
   }
 }
