@@ -34,6 +34,7 @@ export default {
   border-radius: 2px;
   width 44px
   height 300px
+  z-index 99
 .advPopupActiveWrapper
   display none
   position fixed

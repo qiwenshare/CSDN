@@ -18,7 +18,7 @@ export default {
   left:0
   background-color rgba(244,68,68,0.9)
   font-size:14px
-  z-index:999
+  z-index:20
   .tip
     display block
     color:#fff

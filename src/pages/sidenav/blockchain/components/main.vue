@@ -19,7 +19,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.mainWrapper
+.mainWrapper 
+  width 100%
   .contentListTile
     color: #e3635d;
     font-size: 18px;
@@ -28,6 +29,6 @@ export default {
     border-bottom: 1px solid #ebeced;
     background: #fff;
     padding-left: 24px;
-    width: 760px;
+    width: 736px;
     font-weight: 700;
 </style>

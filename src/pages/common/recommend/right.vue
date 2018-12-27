@@ -1,6 +1,6 @@
 <template>
   <div class="rightWrapper">
-    <swiper class="advertisement1" :options="swiperOption1">
+    <swiper class="advertisement1" :options="swiperOption1" v-if="fromLink == 'homepage'">
       <!-- slides -->
       <swiper-slide class="slide" v-for="(item,index) of swiperImgList1" :key="index">
         <img class="swipe-img" :src="item.imgUrl">
@@ -8,6 +8,12 @@
       <!-- Optional controls -->
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
+    <div class="advertisement1ExHome" v-if="fromLink != 'homepage'">
+      <a class="advLink">
+        <img :src="a1ExHomeImgUrl" />
+        <div class="advertisementIcon">广告</div>
+      </a>
+    </div>
     <div class="todayRecommendWrapper">
       <div class="todayRecommendTitle">
         <span>|</span>
@@ -175,8 +181,12 @@
 <script>
 export default {
   name:'recommendRight',
+  props :{
+    fromLink:String
+  },
   data () {
     return {
+      a1ExHomeImgUrl:require("@/assets/img/common/right/a1ExHome/a1ExHome.jpg"),
       todayRecommendList: [
         { name:'listItem',
           desc:'报名 | Workshop：零基础实战智能合约开发',
@@ -397,6 +407,30 @@ export default {
         background-color #c92027
         transition:background-color 0.5s;
 	      -webkit-transition:background-color 0.5s; /* Safari */
+  .advertisement1ExHome
+    margin-bottom:8px
+    height 250px
+    position relative
+    left 0
+    top 0
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04)
+    .advLink
+      display:block
+      img
+        width:300px
+        height:250px
+      .advertisementIcon
+        width 28px
+        height 16px
+        line-height 16px
+        position:absolute
+        bottom:5px
+        left:5px
+        border:1px solid #ccc
+        border-radius:3px
+        color:#ccc
+        font-size:10px
+        text-align:center
   .todayRecommendWrapper
     padding:16px
     background-color #fff

@@ -11,7 +11,7 @@
               <new-info></new-info>
               <homepage-main></homepage-main>
             </div>
-            <recommend-right id="recommendRight"></recommend-right>
+            <recommend-right id="recommendRight" :fromLink="fromLink"></recommend-right>
           </div>
         </div>
       </div>
@@ -94,7 +94,8 @@ export default {
         { name:'img2',
           imgUrl:require("@/assets/img/common/top/recommendTopImg2.png")
         }
-      ]
+      ],
+      fromLink:'homepage'
     }
   }
 }
