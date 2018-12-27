@@ -24,28 +24,28 @@ export default {
       navLogoUrl:require("@/assets/img/sidenav/blockchain/nav/logo.png"),
       navList:[
         { name:'资讯',
-          navLink:'/nav/blockchain'
+          navLink:'/nav/blockchain/index'
         },
         { name:'博客',
-          navLink:'/nav/blockchain'
+          navLink:'/nav/blockchain/blog'
         },
         { name:'专题',
-          navLink:'/nav/blockchain'
+          navLink:'/nav/blockchain/theme'
         },
         { name:'活动',
-          navLink:'/nav/blockchain'
+          navLink:'/nav/blockchain/activity'
         },
         { name:'图文课',
-          navLink:'/nav/blockchain'
+          navLink:'/nav/blockchain/gitchat'
         },
         { name:'学院',
-          navLink:'/nav/blockchain'
+          navLink:'/nav/blockchain/edu'
         },
         { name:'资源',
-          navLink:'/nav/blockchain'
+          navLink:'/nav/blockchain/download'
         },
         { name:'社区',
-          navLink:'/nav/blockchain'
+          navLink:'/nav/blockchain/bbs'
         }
       ]
     }
@@ -76,7 +76,7 @@ export default {
         top 0
         left 0
         .itemPoint
-          border-top-color: inherit;
+          border-top-color: transparent;
           border-top-style: solid;
           border-top-width: 5px;
           border-right-color: transparent;
@@ -94,7 +94,6 @@ export default {
           position: absolute;
           width: 0;
           border-width: 5px;
-          //#e3635d;
           left: 38px;
     .navLogo
       width 160px

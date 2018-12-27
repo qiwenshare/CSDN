@@ -21,7 +21,13 @@ import other from '@/pages/sidenav/other'
 import sec from '@/pages/sidenav/sec'
 import watchers from '@/pages/sidenav/watchers'
 import web from '@/pages/sidenav/web'
-
+import blockchainActivity from '@/pages/sidenav/blockchain/activity'
+import blockchainBbs from '@/pages/sidenav/blockchain/bbs'
+import blockchainBlog from '@/pages/sidenav/blockchain/blog'
+import blockchainDownload from '@/pages/sidenav/blockchain/download'
+import blockchainEdu from '@/pages/sidenav/blockchain/edu'
+import blockchainGitchat from '@/pages/sidenav/blockchain/gitchat'
+import blockchainTheme from '@/pages/sidenav/blockchain/theme'
 Vue.use(Router)
 
 export default new Router({
@@ -62,7 +68,7 @@ export default new Router({
       component: cloud
     },
     {
-      path: '/nav/blockchain',
+      path: '/nav/blockchain/index',
       name: 'blockchain',
       component: blockchain
     },
@@ -135,6 +141,41 @@ export default new Router({
       path: '/nav/web',
       name: 'web',
       component: web
+    },
+    {
+      path: '/nav/blockchain/activity',
+      name: 'blockchainActivity',
+      component: blockchainActivity
+    },
+    {
+      path: '/nav/blockchain/bbs',
+      name: 'blockchainBbs',
+      component: blockchainBbs
+    },
+    {
+      path: '/nav/blockchain/blog',
+      name: 'blockchainBlog',
+      component: blockchainBlog
+    },
+    {
+      path: '/nav/blockchain/download',
+      name: 'blockchainDownload',
+      component: blockchainDownload
+    },
+    {
+      path: '/nav/blockchain/edu',
+      name: 'blockchainEdu',
+      component: blockchainEdu
+    },
+    {
+      path: '/nav/blockchain/gitchat',
+      name: 'blockchainGitchat',
+      component: blockchainGitchat
+    },
+    {
+      path: '/nav/blockchain/theme',
+      name: 'blockchainTheme',
+      component: blockchainTheme
     }
   ]
 })
