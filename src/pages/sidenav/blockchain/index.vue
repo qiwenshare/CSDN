@@ -5,6 +5,7 @@
           <sidebar id="sidebar"></sidebar>
           <div class="contentWrapper">
             <recommend-top :list="recommendTopList"></recommend-top>
+            <nav-block-chain></nav-block-chain>
             <div class="contentMain">
               <div class="contentList">
                 <content-list></content-list>
@@ -27,7 +28,7 @@ import contentList from '@/pages/common/contentList'
 import goTopIcon from '@/pages/common/goTop'
 import freeVipIcon from '@/pages/common/freeVIP'
 import advPopup from '@/pages/common/advPopup'
-
+import navBlockChain from './components/navBlockChain'
 $(document).ready(function(){
   var body = document.getElementsByTagName("body")[0];
   body.onscroll = function () {
@@ -76,7 +77,7 @@ export default {
     contentList,
     goTopIcon,
     freeVipIcon,
-    advPopup
+    navBlockChain
   },
   data () {
     return{

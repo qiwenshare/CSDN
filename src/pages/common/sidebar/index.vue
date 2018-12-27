@@ -19,87 +19,66 @@ export default {
     return {
       sidebarList:[
         { name:'推荐',
-          isActive:false,
           sidebarLink:'/index' 
         },
         { name:'最新文章',
-          isActive:false,
           sidebarLink:'/nav/newArticles' 
         },
         { name:'关注',
-          isActive:false,
           sidebarLink:'/nav/watchers' 
         },
         { name:'资讯',
-          isActive:false,
           sidebarLink:'/nav/news' 
         },
         { name:'人工智能',
-          isActive:false,
           sidebarLink:'/nav/ai' 
         },
         { name:'云计算/大数据',
-          isActive:false,
           sidebarLink:'/nav/cloud' 
         },
         { name:'区块链',
-          isActive:false,
           sidebarLink:'/nav/blockchain' 
         },
         { name:'数据库',
-          isActive:false,
           sidebarLink:'/nav/database' 
         },
         { name:'程序人生',
-          isActive:false,
           sidebarLink:'/nav/career' 
         },
         { name:'游戏开发',
-          isActive:false,
           sidebarLink:'/nav/game' 
         },
         { name:'研发管理',
-          isActive:false,
           sidebarLink:'/nav/engineering'
         },
         { name:'前端',
-          isActive:false,
           sidebarLink:'/nav/web' 
         },
         { name:'移动开发',
-          isActive:false,
           sidebarLink:'/nav/mobile' 
         },
         { name:'物联网',
-          isActive:false,
           sidebarLink:'/nav/iot' 
         },
         { name:'运维',
-          isActive:false,
           sidebarLink:'/nav/ops'
         },
         { name:'计算机基础',
-          isActive:false,
           sidebarLink:'/nav/fund' 
         },
         { name:'编程语言',
-          isActive:false,
           sidebarLink:'/nav/lang' 
         },
         { name:'架构',
-          isActive:false,
           sidebarLink:'/nav/arch' 
         },
         { name:'音视频开发',
-          isActive:false,
           sidebarLink:'/nav/avi' 
         },
         { name:'安全',
-          isActive:false,
           sidebarLink:'/nav/sec' 
         },
         { name:'其他',
-          isActive:false,
           sidebarLink:'/nav/other' 
         },
       ]

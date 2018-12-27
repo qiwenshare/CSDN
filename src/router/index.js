@@ -6,7 +6,7 @@ import arch from '@/pages/sidenav/arch'
 import avi from '@/pages/sidenav/avi'
 import career from '@/pages/sidenav/career'
 import cloud from '@/pages/sidenav/cloud'
-import blockchain from '@/pages/sidenav/blockchain'
+import blockchain from '@/pages/sidenav/blockchain/index'
 import database from '@/pages/sidenav/database'
 import engineering from '@/pages/sidenav/engineering'
 import fund from '@/pages/sidenav/fund'
@@ -29,8 +29,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: home
+      redirect: '/index' // 路由重定向
     },
     {
       path: '/index',
