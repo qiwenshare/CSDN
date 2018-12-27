@@ -1,7 +1,7 @@
 <template>
   <div class="mainWrapper">
     <div class="contentListTile">
-      区块链资讯
+      {{contentListTitle}}
     </div>
     <content-list></content-list>
   </div>
@@ -14,6 +14,9 @@ export default {
   name:'blockchainMain',
   components:{
     contentList
+  },
+  props:{
+    contentListTitle:String
   }
 }
 </script>

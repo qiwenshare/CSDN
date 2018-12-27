@@ -37,7 +37,7 @@ export default {
           sidebarLink:'/nav/cloud' 
         },
         { name:'区块链',
-          sidebarLink:'/nav/blockchain' 
+          sidebarLink:'/nav/blockchain/index' 
         },
         { name:'数据库',
           sidebarLink:'/nav/database' 

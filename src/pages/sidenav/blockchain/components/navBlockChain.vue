@@ -63,10 +63,12 @@ export default {
   width 100%
   background: #fff;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
-  margin: -8px 0 8px 0;
+  margin: 0px 0 8px 0;
   .navList
     display flex
     .navItem
+      &:hover
+        color:#e3635d
       .navContent
         width 87px
         height 40px

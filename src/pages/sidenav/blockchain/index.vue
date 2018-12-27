@@ -5,11 +5,11 @@
           <sidebar id="sidebar"></sidebar>
           <div class="contentWrapper">
             <recommend-top :list="recommendTopList"></recommend-top>
-            <nav-block-chain></nav-block-chain>
+            <nav-block-chain class="navBlockChain"></nav-block-chain>
             <div class="contentMain">
               <div class="contentList">
                 <main-adv></main-adv>
-                <blockchain-main></blockchain-main>
+                <blockchain-main :contentListTitle="contentListTitle"></blockchain-main>
               </div>
               <recommend-right id="recommendRight" :recommendRight="recommendRight"></recommend-right>
             </div>
@@ -95,6 +95,7 @@ export default {
           imgUrl:require("@/assets/img/sidenav/newArticles/adv2.png")
         }
       ],
+      contentListTitle:'区块链资讯',
       recommendRight:'navBlockChain'
     }
   }
@@ -118,6 +119,8 @@ export default {
     right:0
     .contentWrapper
       width:1074px
+      .navBlockChain
+        margin-top:-8px
       .contentMain
         display flex
       .contentList
