@@ -8,7 +8,8 @@
             <nav-block-chain></nav-block-chain>
             <div class="contentMain">
               <div class="contentList">
-                <content-list></content-list>
+                <main-adv></main-adv>
+                <blockchain-main></blockchain-main>
               </div>
               <recommend-right id="recommendRight"></recommend-right>
             </div>
@@ -29,6 +30,9 @@ import goTopIcon from '@/pages/common/goTop'
 import freeVipIcon from '@/pages/common/freeVIP'
 import advPopup from '@/pages/common/advPopup'
 import navBlockChain from './components/navBlockChain'
+import mainAdv from './components/advertisement'
+import blockchainMain from './components/main'
+
 $(document).ready(function(){
   var body = document.getElementsByTagName("body")[0];
   body.onscroll = function () {
@@ -77,7 +81,9 @@ export default {
     contentList,
     goTopIcon,
     freeVipIcon,
-    navBlockChain
+    navBlockChain,
+    mainAdv,
+    blockchainMain
   },
   data () {
     return{

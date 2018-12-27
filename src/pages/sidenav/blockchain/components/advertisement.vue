@@ -33,13 +33,13 @@ export default {
   data () {
     return {
       img2:{
-        backgroundImage:"url(" + require("@/assets/img/homepage/adv2.jpg") + ") ",
+        backgroundImage:"url(" + require("@/assets/img/sidenav/blockchain/adv/adv1.png") + ") ",
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover"
       },
       img3:{
-        backgroundImage:"url(" + require("@/assets/img/homepage/adv3.jpg") + ") ",
+        backgroundImage:"url(" + require("@/assets/img/sidenav/blockchain/adv/adv2.png") + ") ",
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover"
@@ -57,20 +57,11 @@ export default {
         }
       },
       swiperImgList:[
-        { imgUrl:require("@/assets/img/homepage/mainAdvSwiper/swiper1.jpg"),
-          text:'更新微信7.0，你后悔了吗'
+        { imgUrl:require("@/assets/img/sidenav/blockchain/swiper/swiper1.png"),
+          text:'猜对今年ICO大溃败与BCH算力战，能猜对明年的区块链吗'
         },
-        { imgUrl:require("@/assets/img/homepage/mainAdvSwiper/swiper2.jpg"),
-          text:'何恺明等最新突破：视频识别快慢结合，取得人体动作AVA数据集最佳水平'
-        },
-        { imgUrl:require("@/assets/img/homepage/mainAdvSwiper/swiper3.jpg"),
-          text:'Linux GDB 调试指南'
-        },
-        { imgUrl:require("@/assets/img/homepage/mainAdvSwiper/swiper4.jpg"),
-          text:'中国程序员开发的神奇网站：变量命名神器'
-        },
-        { imgUrl:require("@/assets/img/homepage/mainAdvSwiper/swiper5.jpg"),
-          text:'为技术解开枷锁的那个人走了'
+        { imgUrl:require("@/assets/img/sidenav/blockchain/swiper/swiper2.png"),
+          text:'16岁开发者从辍学歧视，到开发爆款应用，其人生远非成人想象'
         }
       ]
     }
@@ -90,7 +81,7 @@ export default {
 @import "~@/assets/styles/mixins.styl"
 .advWrapper
   display flex
-  margin:0 auto 8px
+  margin:0 auto
   .advLeft
     width 508px
     height 206px
