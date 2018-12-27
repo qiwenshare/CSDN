@@ -33,6 +33,70 @@
         </div>
       </ul>
     </div>
+    <div class="cloudchainTheme" v-if="recommendRight == 'navBlockChain'">
+      <h3 class="ThemeTitle">
+        热门专题
+        <a class="more">查看更多</a>
+      </h3>
+      <ul class="ThemeContent">
+        <li class="ThemeItem" v-for="(item,index) of themeList" :key="index">
+          <a class="ThemeLeft">
+            <img  class="ThemeImg" :src="item.imgUrl"/>
+            <p class="ThemeImgName">{{item.imgName}}</p>
+          </a>
+          <div class="ThemeDesc">
+            <div class="DescTop desc">
+              <span class="iconfont circle">&#xe7a5;</span>
+              <p>{{item.descTop}}</p>
+            </div>
+            <div class="DescBottom desc">
+              <span class="iconfont circle">&#xe7a5;</span>
+              <p>{{item.descBottom}}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="cloudchainCalendar" v-if="recommendRight == 'navBlockChain'">
+      <h3 class="calendarTitle">
+        活动日历
+        <a class="more">查看更多</a>
+      </h3>
+      <ul class="calendarContent">
+        <li v-for="(item,index) of ccCalendarList" :key="index" class="calendarItem">
+          <div class="calendarTop">
+            <div class="date">
+              <span class="month">{{item.month}}月</span>
+              <span class="day">{{item.day}}日</span>
+            </div>
+            <div class="status">{{item.status}}</div>
+          </div>
+          <div class="calendarBottom">{{item.desc}}</div>
+        </li>
+      </ul>
+    </div>
+    <div class="cloudchainGitchat" v-if="recommendRight == 'navBlockChain'">
+      <h3 class="gitchatTitle">
+        图文课
+        <a class="more">查看更多</a>
+      </h3>
+      <ul class="gitchatContent">
+        <li class="gitchatItem" v-for="(item,index) of gitchatList" :key="index">
+          <a class="gitchatLeft">
+            <img  class="gitchatImg" :src="item.imgUrl"/>
+          </a>
+          <div class="gitchatDesc">
+            <div class="DescName desc">
+              {{item.descName}}
+            </div>
+            <div class="DescBottom desc">
+              <span>{{item.person}}</span>
+              <p>{{item.descBottom}}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
     <div class="todayRecommendWrapper" v-if="recommendRight != 'navBlockChain'">
       <div class="todayRecommendTitle">
         <span>|</span>
@@ -110,7 +174,7 @@
       <img src="@/assets/img/common/right/advertisement2.png"/>
       <div class="advertisementIcon">广告</div>
     </div>
-    <div class="activityCalendar">
+    <div class="activityCalendar" v-if="recommendRight != 'navBlockChain'">
       <div class="activityCalendarTitle">
         <span>|</span>
         <h3>活动日历</h3>
@@ -216,6 +280,77 @@ export default {
         },
         { left:{name:'微信公众号订阅数',num:'36万'},
           right:{name:'',num:''}
+        }
+      ],
+      themeList:[
+        { imgUrl:require("@/assets/img/common/right/blockchain/theme/themeImg1.png"),
+          imgName:'沙龙',
+          descTop:'香港站 | 区块链技术与金融应用',
+          descBottom:'广州站 | 技术创新与生态构建'
+        },
+        { imgUrl:require("@/assets/img/common/right/blockchain/theme/themeImg2.png"),
+          imgName:'链周刊',
+          descTop:'第25期：为技术解开枷锁的那个人走了',
+          descBottom:'第24期：Python告诉你：熊市将去，牛市要来'
+        },
+        { imgUrl:require("@/assets/img/common/right/blockchain/theme/themeImg3.png"),
+          imgName:'人物志',
+          descTop:'13岁创业，3块钱卖掉大把比特币，这是怎样的开挂人生',
+          descBottom:'他是Intel视频业务老大，用谷歌视频还被要高价'
+        },
+        { imgUrl:require("@/assets/img/common/right/blockchain/theme/themeImg4.png"),
+          imgName:'安全连载',
+          descTop:'@程序员，如何淋漓尽致地敲出Solidity安全代码？',
+          descBottom:'“危机四伏”的以太转账操作'
+        },
+        { imgUrl:require("@/assets/img/common/right/blockchain/theme/themeImg5.png"),
+          imgName:'智变',
+          descTop:'Web3.0来了！玩法变了',
+          descBottom:'区块链搅局！一场2.0模式，正侵蚀能源战场'
+        }
+      ],
+      ccCalendarList:[
+        { month:11,
+          day:30,
+          status:'香港',
+          desc:'区块链技术与金融应用发展论坛·香港站'
+        },
+        { month:12,
+          day:22,
+          status:'北京',
+          desc:'CSDN Workshop零基础实战智能合约'
+        },
+        { month:12,
+          day:26,
+          status:'线上',
+          desc:'直播 | Hyperledger Fabric多合约实战'
+        }
+      ],
+      gitchatList:[
+        { imgUrl:require("@/assets/img/common/right/blockchain/gitchat/person1.jpg"),
+          descName:'区块链全景课',
+          person:'丹华',
+          descBottom:'数字货币分析师'
+        },
+        { imgUrl:require("@/assets/img/common/right/blockchain/gitchat/person2.jpg"),
+          descName:'以太坊使用及代币开发实战',
+          person:'朱智胜',
+          descBottom:'创业公司CTO'
+        },
+        { imgUrl:require("@/assets/img/common/right/blockchain/gitchat/person3.jpg"),
+          descName:'零基础学区块链和以太坊开发',
+          person:'李宁',
+          descBottom:'欧瑞科技创始人&CEO'
+        },
+        { imgUrl:require("@/assets/img/common/right/blockchain/gitchat/person4.jpg"),
+          descName:'步步为营从智能合约到DApp',
+          person:'李小雨',
+          descBottom:'蛛点网络科技产品经理'
+        },
+        { imgUrl:require("@/assets/img/common/right/blockchain/gitchat/person5.jpg"),
+          descName:'一起学：以太坊智能合约开发',
+          person:'旷文杰',
+          descBottom:'某区块链创业公司技术经理'
         }
       ],
       todayRecommendList: [
@@ -461,6 +596,7 @@ export default {
         color:#ccc
         font-size:10px
         text-align:center
+  
   .cloudchainCount
     background: #fff;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
@@ -510,6 +646,140 @@ export default {
           cursor:pointer
           &:hover
             color:#3db817
+  .cloudchainTheme
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
+    margin-bottom: 8px;
+    padding: 14px 16px;
+    font-size:14px
+    .ThemeTitle
+      font-size: 14px;
+      color: #5c5c5c;
+      font-weight: normal;
+      position:relative
+      left:0
+      top:0
+      .more
+        font-size: 12px;
+        color: #79a5e5;
+        font-weight: 300;
+        position: absolute;
+        right: 0;
+    .ThemeContent
+      font-size:12px
+      margin-top:8px
+      .ThemeItem
+        display:flex
+        margin-top:8px
+        .ThemeLeft
+          width:64px
+          .ThemeImg
+            width:64px
+            height:40px
+          .ThemeImgName
+            width:100%
+            font-size:14px
+            text-align:center
+        .ThemeDesc
+          width:200px
+          padding-left:10px
+          .desc
+            display:flex
+            .circle
+              height:18px
+              line-height:18px
+              color:#ccc
+            p
+              line-height:18px
+              color: #3d3d3d;
+          .DescBottom
+            margin-top:4px
+  .cloudchainCalendar
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
+    margin-bottom: 8px;
+    padding: 14px 16px;
+    font-size:14px
+    .calendarTitle
+      font-size: 14px;
+      color: #5c5c5c;
+      font-weight: normal;
+      position:relative
+      left:0
+      top:0
+      .more
+        font-size: 12px;
+        color: #79a5e5;
+        font-weight: 300;
+        position: absolute;
+        right: 0;
+    .calendarContent
+      font-size:14px
+      margin-top:8px
+      .calendarItem
+        margin-top:12px
+        .calendarTop
+          display:flex
+          font-size:12px
+          .date
+            background: #e8f3fd;
+            border-radius: 2px;
+            padding: 2px 4px;
+            margin-right: 8px;
+            .month
+              color: #3399ea;
+          .status
+            color: #999;
+            font-weight: 300;
+            height:20px
+            line-height:20px
+        .calendarBottom
+          margin-top:4px
+  .cloudchainGitchat
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
+    margin-bottom: 8px;
+    padding: 14px 16px;
+    font-size:14px
+    .gitchatTitle
+      font-size: 14px;
+      color: #5c5c5c;
+      font-weight: normal;
+      position:relative
+      left:0
+      top:0
+      .more
+        font-size: 12px;
+        color: #79a5e5;
+        font-weight: 300;
+        position: absolute;
+        right: 0;
+    .gitchatContent
+      font-size:12px
+      margin-top:8px
+      .gitchatItem
+        display:flex
+        margin-top:10px
+        .gitchatLeft
+          width:64px
+          .gitchatImg
+            width:50px
+            height:64px
+        .gitchatDesc
+          width:200px
+          padding-left:10px
+          .desc
+            font-size: 14px;
+            color: #3d3d3d;
+            margin-bottom: 4px;
+            line-height: 20px;
+          .DescBottom
+            display:flex
+            font-size:12px
+            p
+              color: #999;
+              font-weight: 300;
+              padding-left: 6px;
   .todayRecommendWrapper
     padding:16px
     background-color #fff
