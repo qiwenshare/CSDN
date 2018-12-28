@@ -53,13 +53,13 @@ $(document).ready(function(){
       $("#sidebar").css("top",'0');
     }
     //右侧推荐固定
-    if(netScrollTop >= 1830) {
+    if(netScrollTop >= 2835) {
       $("#recommendRight").css("position",'fixed');
       $("#recommendRight").css("bottom",'0');
       $("#recommendRight").css("top",'auto');
       $("#recommendRight").css("left",'966.5px');
     }
-    if(netScrollTop < 1830) {
+    if(netScrollTop < 2835) {
       $("#recommendRight").css("position",'relative');
       $("#recommendRight").css("bottom",'0');
       $("#recommendRight").css("left",'0');
