@@ -1,5 +1,5 @@
 <template>
-  <div class="homepageWrapper">
+  <div class="blogWrapper">
       <Header></Header>
       <div class="contentSidebar">
         <sidebar id="sidebar"></sidebar>
@@ -17,7 +17,6 @@
       </div>
       <go-top-icon id="goTop"></go-top-icon>
       <free-vip-icon id="freeVip"></free-vip-icon>
-      <adv-popup></adv-popup>
   </div>
 </template>
 
@@ -31,10 +30,9 @@ import newInfo from './components/newInfo'
 import homepageMain from './components/main'
 import goTopIcon from '@/pages/common/goTop'
 import freeVipIcon from '@/pages/common/freeVIP'
-import advPopup from '@/pages/common/advPopup'
 
 export default {
-  name: 'home',
+  name: 'blog',
   components: {
     Header,
     sidebar,
@@ -45,19 +43,18 @@ export default {
     homepageMain,
     goTopIcon,
     freeVipIcon,
-    advPopup
   },
   data () {
     return {
       recommendTopList:[
         { name:'img1',
-          imgUrl:require("@/assets/img/common/top/recommendTopImg1.png")
+          imgUrl:require("@/assets/img/topnav/blog/topAdv/adv1.jpg")
         },
         { name:'img2',
-          imgUrl:require("@/assets/img/common/top/recommendTopImg2.png")
+          imgUrl:require("@/assets/img/topnav/blog/topAdv/adv2.png")
         }
       ],
-      fromLink:'homepage'
+      fromLink:'blog'
     }
   },
   mounted () {//给window添加一个滚动滚动监听事件
@@ -98,7 +95,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.homepageWrapper
+.blogWrapper
   position relative
   top:0
   left:0

@@ -28,6 +28,8 @@ import blockchainDownload from '@/pages/sidenav/blockchain/download'
 import blockchainEdu from '@/pages/sidenav/blockchain/edu'
 import blockchainGitchat from '@/pages/sidenav/blockchain/gitchat'
 import blockchainTheme from '@/pages/sidenav/blockchain/theme'
+import blog from '@/pages/topnav/blog/index'
+
 Vue.use(Router)
 
 export default new Router({
@@ -176,6 +178,11 @@ export default new Router({
       path: '/nav/blockchain/theme',
       name: 'blockchainTheme',
       component: blockchainTheme
+    },
+    {
+      path: '/blog',
+      name: 'blog',
+      component: blog
     }
   ]
 })
