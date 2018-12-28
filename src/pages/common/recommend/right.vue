@@ -1,5 +1,5 @@
 <template>
-  <div class="rightWrapper">
+  <div class="rightWrapper" id="rightBar">
     <swiper class="advertisement1" :options="swiperOption1" v-if="fromLink == 'homepage'">
       <!-- slides -->
       <swiper-slide class="slide" v-for="(item,index) of swiperImgList1" :key="index">
@@ -524,7 +524,7 @@ export default {
         }
       ],
     }
-  }
+  },
 }
 </script>
 
@@ -533,6 +533,11 @@ export default {
 .rightWrapper
   width 300px
   height:3300px
+  position: fixed;
+  left:966.5px
+  bottom: 0;
+  z-index: 2;
+  box-sizing: border-box;
   .advertisement1
     margin-bottom:8px
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04)

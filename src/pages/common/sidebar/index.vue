@@ -93,16 +93,19 @@ export default {
   color: #fff
 .sidebarWrapper
   width: 96px
-  height:692px
+  height:710px
   background-color: #fff
   color: #707070
   margin-right: 14px
   text-align: center
   line-height: 32px
   font-size:14px
-  position: relative
-  top:0
-  left:0
+  position: fixed;
+  left:82.5px
+  bottom:0;
+  top:50px;
+  z-index: 2;
+  box-sizing: border-box;
   padding: 6px 0
   -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04)
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04)
