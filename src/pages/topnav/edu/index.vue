@@ -3,6 +3,7 @@
       <Header></Header>
       <div class="eduContent">
         <edunav></edunav>
+        <intro></intro>
       </div>
       <go-top-icon id="goTop"></go-top-icon>
   </div>
@@ -11,6 +12,7 @@
 <script>
 import Header from '@/pages/common/header'
 import edunav from './components/edunav'
+import intro from './components/intro'
 import goTopIcon from '@/pages/common/goTop'
 
 export default {
@@ -18,6 +20,7 @@ export default {
   components: {
     Header,
     edunav,
+    intro,
     goTopIcon
   },
   data () {
@@ -54,8 +57,4 @@ export default {
   background-color #fff
   .eduContent
     width: 100%;
-    display flex
-    position relative
-    top:0
-    right:0
 </style>
