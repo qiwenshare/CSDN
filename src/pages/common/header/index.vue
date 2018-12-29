@@ -37,7 +37,7 @@ export default {
                 topnavLink:'/blog'
             },
             {   name:'学院',
-                topnavLink:''
+                topnavLink:'/edu'
             },
             {   name:'下载',
                 topnavLink:''
