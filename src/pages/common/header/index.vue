@@ -2,9 +2,11 @@
 <div class="headerWrapper">
     <nav class="header">
         <ul class="headerList headerLeft">
-            <li><a><img src="@/assets/img/common/header/csdnLog.png"/></a></li>
+            <li>
+                <a><img src="@/assets/img/common/header/csdnLog.png"/></a>
+            </li>
             <li v-for="(item,index) in listLeft" :key="index">
-                <a>{{item}}</a>
+                <router-link :to="item.topnavLink" class="topnavDiv" tag="div">{{item.name}}</router-link>
             </li>
         </ul>
         <ul class="headerList headerRight">
@@ -30,7 +32,47 @@ export default {
     name: 'Header',
     data() {
       return {
-        listLeft:['博客','学院','下载','图文课','论坛','APP','问答','商城','VIP会员','活动','招聘','ITeye','GitChat']
+        listLeft:[
+            {   name:'博客',
+                topnavLink:'/blog'
+            },
+            {   name:'学院',
+                topnavLink:''
+            },
+            {   name:'下载',
+                topnavLink:''
+            },
+            {   name:'图文课',
+                topnavLink:''
+            },
+            {   name:'论坛',
+                topnavLink:''
+            },
+            {   name:'APP',
+                topnavLink:''
+            },
+            {   name:'问答',
+                topnavLink:''
+            },
+            {   name:'商城',
+                topnavLink:''
+            },
+            {   name:'VIP会员',
+                topnavLink:''
+            },
+            {   name:'活动',
+                topnavLink:''
+            },
+            {   name:'招聘',
+                topnavLink:''
+            },
+            {   name:'ITeye',
+                topnavLink:''
+            },
+            {   name:'GitChat',
+                topnavLink:''
+            }
+        ]
       };
     },
     methods: {
@@ -41,6 +83,8 @@ export default {
 
 <style lang="stylus" scoped>
 @import "~@/assets/styles/mixins.styl"
+.router-link-active
+  border-bottom:2px solid #CA0C16
 .headerWrapper
     height:40px
     min-width: 1200px;
@@ -55,13 +99,16 @@ export default {
         .headerLeft
             flex:6
             li
-                height:100%
+                height:40px
                 padding:0 8px
                 float:left
                 text-align:center
                 verticalMiddle() 
                 &:hover
                     color:#CA0C16
+                .topnavDiv
+                    height:38px
+                    line-height 38px
         .headerRight
             flex:4
             li
