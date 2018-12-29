@@ -14,12 +14,12 @@
     <div class="advRight">
       <div :style="img2">
         <a>
-          <p>今日头条能干掉微信么？</p>
+          <p>致敬阅读者，超值好书限时特价</p>
         </a>
       </div>
       <div :style="img3"> 
         <a>
-          <p>“深度学习之父”大谈AI：寒冬不会出现，论文评审机制有损创新</p>
+          <p>Python 快速入门实战教程</p>
         </a>
       </div>
     </div>
@@ -33,13 +33,13 @@ export default {
   data () {
     return {
       img2:{
-        backgroundImage:"url(" + require("@/assets/img/homepage/adv2.jpg") + ") ",
+        backgroundImage:"url(" + require("@/assets/img/topnav/blog/swiperRight/adv1.png") + ") ",
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover"
       },
       img3:{
-        backgroundImage:"url(" + require("@/assets/img/homepage/adv3.jpg") + ") ",
+        backgroundImage:"url(" + require("@/assets/img/topnav/blog/swiperRight/adv2.png") + ") ",
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover"
@@ -57,20 +57,14 @@ export default {
         }
       },
       swiperImgList:[
-        { imgUrl:require("@/assets/img/homepage/mainAdvSwiper/swiper1.jpg"),
-          text:'更新微信7.0，你后悔了吗'
+        { imgUrl:require("@/assets/img/topnav/blog/swiper/adv1.png"),
+          text:'GitChat 陪你一起经历不平凡'
         },
-        { imgUrl:require("@/assets/img/homepage/mainAdvSwiper/swiper2.jpg"),
-          text:'何恺明等最新突破：视频识别快慢结合，取得人体动作AVA数据集最佳水平'
+        { imgUrl:require("@/assets/img/topnav/blog/swiper/adv2.png"),
+          text:'大数据预测CSDN2018博客之星评选结果分享 沉淀 ！CSDN 2018博客之星年度评选正式上线'
         },
-        { imgUrl:require("@/assets/img/homepage/mainAdvSwiper/swiper3.jpg"),
-          text:'Linux GDB 调试指南'
-        },
-        { imgUrl:require("@/assets/img/homepage/mainAdvSwiper/swiper4.jpg"),
-          text:'中国程序员开发的神奇网站：变量命名神器'
-        },
-        { imgUrl:require("@/assets/img/homepage/mainAdvSwiper/swiper5.jpg"),
-          text:'为技术解开枷锁的那个人走了'
+        { imgUrl:require("@/assets/img/topnav/blog/swiper/adv3.jpg"),
+          text:'CSDN博文周刊第2期 |让Elasticsearch飞起来!——性能优化实践干货'
         }
       ]
     }

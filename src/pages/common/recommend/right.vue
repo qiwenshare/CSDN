@@ -8,6 +8,36 @@
       <!-- Optional controls -->
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
+    <div class="blogger" v-if="fromLink == 'blog'">
+      <div class="bloggerTitle">
+        <span>|</span>
+        <h3>博客专家</h3>
+        <a>专家申请</a>
+      </div>
+      <ul class="bloggerList">
+        <li v-for="(item,index) of bloggerList" :key="index" class="bloggerItem border">
+          <div class="itemTop">
+            <img :src="item.imgUrl"  class="headImg"/>
+            <ul class="info">
+              <li class="infoTop">
+                <span class="name">{{item.name}}</span>
+                <span class="iconfont edit">&#xe649;</span>
+              </li>
+              <li class="infoBottom">
+                <span class="profession">{{item.profession}}</span>
+                <span class="essayCount">{{item.essayCount}}篇</span>
+              </li>
+            </ul>
+          </div>
+          <div class="itemBottom">
+            {{item.desc}}
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="blogMove" v-if="fromLink == 'blog'">
+      <img src="@/assets/img/topnav/blog/right/blogMove.png"/>
+    </div>
     <div class="advertisement1ExHome" v-if="fromLink != 'homepage'">
       <a class="advLink">
         <img :src="a1ExHomeImgUrl" />
@@ -110,13 +140,13 @@
           </a>
         </li>
       </ul>
-      <div class="todayRecommendActive border-top">
+      <div class="todayRecommendActive border-top" v-if="fromLink != 'blog'">
         <a v-for="(item,index) of todayRecommendActiveList" :key="index" :class="item.name">
           <span>{{item.desc}}</span>
         </a>
       </div>
     </div>
-    <div class="voteWrapper" v-if="recommendRight != 'navBlockChain'">
+    <div class="voteWrapper" v-if="recommendRight != 'navBlockChain' && fromLink != 'blog'">
       <div class="voteImg" :style="voteBackground">
         <a>
           <img class="viewpoint" src="@/assets/img/common/right/viewpoint.png"/>
@@ -147,7 +177,7 @@
         </li>
       </ul>
     </div>
-    <div class="magazineWrapper" v-if="recommendRight != 'navBlockChain'">
+    <div class="magazineWrapper" v-if="recommendRight != 'navBlockChain' && fromLink != 'blog'">
       <h3>
         <span class="magazineTitle">GitChat极客书</span>
         <div class="magazineOpera">
@@ -174,7 +204,7 @@
       <img src="@/assets/img/common/right/advertisement2.png"/>
       <div class="advertisementIcon">广告</div>
     </div>
-    <div class="activityCalendar" v-if="recommendRight != 'navBlockChain'">
+    <div class="activityCalendar" v-if="recommendRight != 'navBlockChain' && fromLink != 'blog'">
       <div class="activityCalendarTitle">
         <span>|</span>
         <h3>活动日历</h3>
@@ -270,6 +300,26 @@ export default {
   },
   data () {
     return {
+      bloggerList:[
+        { imgUrl:require("@/assets/img/topnav/blog/right/blogger/headImg1.jpg"),
+          name:'boonya',
+          profession:'Java高级工程师',
+          essayCount:'1080',
+          desc:`君子一诺千金，我是一个自立乐观守信之人，事情做完了是本分做好了才是提高。在编程和项目管理方面至今已有 5 年多的经验，如：项目进度管理（里程碑控制 Office project、 UML 建模等）、需求设计、原型设计（ Viso、 Auxre RP）、功能详设、数据库设计（ Oracle、...`
+        },
+        { imgUrl:require("@/assets/img/topnav/blog/right/blogger/headImg2.jpg"),
+          name:'西北白杨树',
+          profession:'.net工程师',
+          essayCount:'495',
+          desc:`近四年.net开发经验，擅长C#，WPF编程。曾开发过“步步高学习管家”软件.擅长C#.NET开发。`
+        },
+        { imgUrl:require("@/assets/img/topnav/blog/right/blogger/headImg3.jpg"),
+          name:'mikyou',
+          profession:'Android开发工程师',
+          essayCount:'118',
+          desc:`本人爱好编程，乐于分享，追求和钻研新技术，热衷于Kotlin语言开发和函数式编程，目前就职于扇贝网，担任Android开发工程师。工作之余的爱好就是分享技术博客，希望可以和更多热爱技术的人一起探讨一起学习。`
+        }
+      ],
       a1ExHomeImgUrl:require("@/assets/img/common/right/a1ExHome/a1ExHome.jpg"),
       countList:[
         { left:{name:'总用户数',num:'180万'},
@@ -578,6 +628,92 @@ export default {
         background-color #c92027
         transition:background-color 0.5s;
 	      -webkit-transition:background-color 0.5s; /* Safari */
+  .blogger
+    padding:16px
+    background-color #fff
+    margin-bottom:8px
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04)
+    .bloggerTitle
+      display flex
+      color: #4f4f4f;
+      height: 28px;
+      line-height 28px
+      margin-bottom: 7px;
+      position:relative
+      left:0
+      top:0
+      span 
+        font-weight bold
+        color:#ca0c16
+        margin-right 5px
+      h3
+        font-weight: normal;
+        font-size: 16px;
+        color: #2c3033;
+      a
+        position:absolute
+        right:0
+        top:0
+        font-size: 12px;
+        color: #999;
+    .bloggerList
+      .bloggerItem
+        padding: 8px;
+        border-radius: 3px;
+        margin-bottom: 8px;
+        .itemTop
+          display:flex
+          .headImg
+            width:50px
+            height:50px
+            border: 1px solid #f3f3f3;
+            border-radius: 50%;
+          .info
+            width:196px
+            padding:2px
+            .infoTop
+              margin-bottom: 5px;
+              position:relative
+              left:0
+              top:0
+              .name
+                font-size: 14px;
+                color: #4f4f4f;
+                font-weight: bold;
+                width:170px
+              .edit
+                color: #d1c080;
+                font-weight:bold
+                position:absolute
+                right:0
+                top:0
+            .infoBottom
+              font-size: 12px;
+              color: #707070;
+              position:relative
+              left:0
+              top:0
+              .profession
+                max-width:150px
+                padding-left:5px
+              .essayCount
+                position:absolute
+                right:0
+                top:0
+        .itemBottom
+          width: 100%;
+          margin-top: 8px;
+          font-size: 12px;
+          color: #707070;
+          line-height: 16px;
+          ellipsis();
+  .blogMove
+    background-color #fff
+    margin-bottom:8px
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04)
+    img
+      width:300px
+      height:80px
   .advertisement1ExHome
     height 250px
     position relative
@@ -1107,6 +1243,7 @@ export default {
         display:flex
         text-align:center
         a
+          color: #3D3D3D;
           font-size:14px
           font-weight:bold
           text-align:center

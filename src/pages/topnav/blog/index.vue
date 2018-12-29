@@ -80,11 +80,11 @@ export default {
         document.querySelector('#sidebar').style.top = '-128px';
       }
       //右侧：推荐信息模块
-      if(scrollTop <= 2845){
+      if(scrollTop <= 2333){
         offsetTop = 148-Number(scrollTop);
         document.querySelector('#recommendRight').style.top = offsetTop+'px';
       }else{
-        document.querySelector('#recommendRight').style.top = '-2697px';
+        document.querySelector('#recommendRight').style.top = '-2185px';
       }
     },
   },
