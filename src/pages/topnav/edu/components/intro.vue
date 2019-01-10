@@ -23,7 +23,7 @@
         </li>
       </ul>
     </div>
-    <div class="courseDetail" v-for="(item,index) of courseDetailList" :key="index" :class="item.name">
+    <div class="courseDetail" v-for="(item,index) of courseDetailList" :key="index" :class="item.name" @mouseenter="courseActive(item.title)" @mouseleave="courseDefault(item.title)">
       <div class="detailTop">
         <h4 class="title">{{item.title}}</h4>
         <ul class="courseNameList">
@@ -146,7 +146,7 @@ export default {
             'C语言入门到高阶--应用循环与Windows概念'
           ]
         },
-        { name:'examLeft',
+        { name:'exam',
           title:'考试认证',
           courseName:['软考','Linux认证','华为认证','思科认证','微软认证','项目管理','H3C认证','计算机等级考试','其他'],
           courseEssay:[
@@ -157,7 +157,7 @@ export default {
             '2019年软考系统集成项目管理工程师基础知识（上）软考视频教程'
           ]
         },
-        { name:'mobileLeft',
+        { name:'mobile',
           title:'移动开发',
           courseName:['手游开发','iOS','微信开发','Swift','Android','Webapp','ReactNative','Cordova','其他'],
           courseEssay:[
@@ -168,7 +168,7 @@ export default {
             '3G Android实战开发从入门到精通'
           ]
         },
-        { name:'cloudLeft',
+        { name:'cloud',
           title:'云计算/大数据',
           courseName:['Spark','Docker/K8S','Hadoop','OpenStack','云计算基础架构','虚拟化技术','云平台','大数据','ELK','其他'],
           courseEssay:[
@@ -179,8 +179,8 @@ export default {
             '网站渠道流量实时日志分析案例'
           ]
         },
-        { name:'ai',
-          title:'人工智能',
+        { name:'other',
+          title:'其他课程',
           courseName:['研发管理','系统/网络/运维','数据库','游戏开发','设计制作','智能硬件/物联网','大学课程','产品经理','信息安全','区块链'],
           courseEssay:[
             'Python+OpenCV计算机视觉',
@@ -201,24 +201,24 @@ export default {
         $('.aiLeft').css("background",'#b62c3c');
       }
       if(param == '编程语言'){
-        $('.ai').css("display",'block');
-        $('.aiLeft').css("background",'#b62c3c');
+        $('.lang').css("display",'block');
+        $('.langLeft').css("background",'#b62c3c');
       }
       if(param == '考试认证'){
-        $('.ai').css("display",'block');
-        $('.aiLeft').css("background",'#b62c3c');
+        $('.exam').css("display",'block');
+        $('.examLeft').css("background",'#b62c3c');
       }
       if(param == '移动开发'){
-        $('.ai').css("display",'block');
-        $('.aiLeft').css("background",'#b62c3c');
+        $('.mobile').css("display",'block');
+        $('.mobileLeft').css("background",'#b62c3c');
       }
       if(param == '云计算/大数据'){
-        $('.ai').css("display",'block');
-        $('.aiLeft').css("background",'#b62c3c');
+        $('.cloud').css("display",'block');
+        $('.cloudLeft').css("background",'#b62c3c');
       }
       if(param == '其他课程'){
-        $('.ai').css("display",'block');
-        $('.aiLeft').css("background",'#b62c3c');
+        $('.other').css("display",'block');
+        $('.otherLeft').css("background",'#b62c3c');
       }
     },
     courseDefault(param){
@@ -227,24 +227,24 @@ export default {
         $('.aiLeft').css("background",'#cc3848');
       }
       if(param == '编程语言'){
-        $('.ai').css("display",'none');
-        $('.aiLeft').css("background",'#cc3848');
+        $('.lang').css("display",'none');
+        $('.langLeft').css("background",'#cc3848');
       }
       if(param == '考试认证'){
-        $('.ai').css("display",'none');
-        $('.aiLeft').css("background",'#cc3848');
+        $('.exam').css("display",'none');
+        $('.examLeft').css("background",'#cc3848');
       }
       if(param == '移动开发'){
-        $('.ai').css("display",'none');
-        $('.aiLeft').css("background",'#cc3848');
+        $('.mobile').css("display",'none');
+        $('.mobileLeft').css("background",'#cc3848');
       }
       if(param == '云计算/大数据'){
-        $('.ai').css("display",'none');
-        $('.aiLeft').css("background",'#cc3848');
+        $('.cloud').css("display",'none');
+        $('.cloudLeft').css("background",'#cc3848');
       }
       if(param == '其他课程'){
-        $('.ai').css("display",'none');
-        $('.aiLeft').css("background",'#cc3848');
+        $('.other').css("display",'none');
+        $('.otherLeft').css("background",'#cc3848');
       }
     }
   }
