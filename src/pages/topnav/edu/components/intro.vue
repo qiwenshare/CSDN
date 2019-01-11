@@ -356,6 +356,7 @@ export default {
 .introWrapper
   width 100%
   height 400px
+  margin-bottom:30px
   position relative
   left 0
   top 0

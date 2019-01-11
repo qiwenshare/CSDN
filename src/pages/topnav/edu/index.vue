@@ -4,6 +4,7 @@
       <div class="eduContent">
         <edunav></edunav>
         <intro></intro>
+        <train></train>
       </div>
       <go-top-icon id="goTop"></go-top-icon>
   </div>
@@ -13,6 +14,7 @@
 import Header from '@/pages/common/header'
 import edunav from './components/edunav'
 import intro from './components/intro'
+import train from './components/train'
 import goTopIcon from '@/pages/common/goTop'
 
 export default {
@@ -21,6 +23,7 @@ export default {
     Header,
     edunav,
     intro,
+    train,
     goTopIcon
   },
   data () {
