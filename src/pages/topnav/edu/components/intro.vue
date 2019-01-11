@@ -42,6 +42,36 @@
         </ul>
       </div>
     </div>
+    <div class="notice">
+      <ul class="noticeTitle">
+        <li class="titleLeft titleItem" @click="show(clickLeft)">学院要闻</li>
+        <li class="titleRight titleItem active" @click="show(clickRight)">学员优惠</li>
+      </ul>
+      <ul class="noticeContent">
+        <li class="contentLeft" v-show="showLeft">
+          <ul class="leftList">
+            <li v-for="(item,index) of contentLeftList" class="leftItem" :key="index">
+              <span class="iconfont">&#xe637;</span>
+              <a class="itemLink" :href="item.itemUrl" target="_blank">
+                {{item.text}}
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="contentRight" v-show="showRight">
+          <h1 class="vipRight">会员特权</h1>
+          <ul class="rightList">
+            <li v-for="(item,index) of contentRightList" class="rightItem" :key="index">
+              <div class="iconWrapper" :class="item.name">
+                <span class="iconfont" v-html="item.icon"></span>
+              </div>
+              <p>{{item.text}}</p>
+            </li>
+          </ul>
+          <div class="vipDetail">会员详情</div>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -81,8 +111,10 @@ export default {
         pagination: {
           el: '.swiper-pagination',
           type: 'bullets',
+          clickable :true
         },
         autoplay:true,
+        effect : 'fade',
         loop:true
       },
       courseList:[
@@ -190,7 +222,61 @@ export default {
             'C语言入门到高阶--递归算法与 Windows 趣味实战项目'
           ]
         }
-      ]
+      ],
+      contentLeftList:[
+        { text: "免费直播：Go语言打造个人博客系统",
+          itemUrl:"https://edu.csdn.net/huiyiCourse/detail/942?utm_source=link"
+        },
+        { text: "基于keras的fasterRCNN实现视频教程",
+          itemUrl:"https://edu.csdn.net/course/detail/9182?utm_source=banner"
+        },
+        { text: "CSDN学院帮助文档",
+          itemUrl:"https://edu.csdn.net/help"
+        },
+        { text: "CSDN学院1月视频教程好评榜",
+          itemUrl:"https://blog.csdn.net/CSDNedu/article/details/85786458"
+        },
+        { text: "开发者社群震撼来袭！",
+          itemUrl:"https://blog.csdn.net/CSDNedu/article/details/84327908"
+        },
+        { text: "7周Spring Cloud微服务架构项目实战",
+          itemUrl:"https://edu.csdn.net/course/detail/9995?utm_source=link"
+        },
+        { text: "2019年人工智能发展趋势！",
+          itemUrl:"https://edu.csdn.net/topic/ai30?utm_source=link"
+        },
+        { text: "优惠套餐选购入口！",
+          itemUrl:"https://edu.csdn.net/combos?utm_source=link"
+        },
+        { text: "python学习路线免费领！",
+          itemUrl:"https://edu.csdn.net/topic/python115?utm_source=link"
+        },
+        { text: "142讲玩转【Spring Boot 分布式电商】开发",
+          itemUrl:"https://edu.csdn.net/course/detail/10276?utm_source=link"
+        }
+      ],
+      contentRightList:[
+        { name:"item1",
+          text:"千门专享课程免费看",
+          icon:"&#xe690;"
+        },
+        { name:"item2",
+          text:"精品课程每月免费兑",
+          icon:"&#xe6d7;"
+        },
+        { name:"item3",
+          text:"课程低至8折",
+          icon:"&#xe602;"
+        },
+        { name:"item4",
+          text:"600次下载特权",
+          icon:"&#xe604;"
+        }
+      ],
+      clickLeft:"left",
+      clickRight:"right",
+      showLeft:false,
+      showRight:true
     }
   },
   methods:{
@@ -245,6 +331,20 @@ export default {
       if(param == '其他课程'){
         $('.other').css("display",'none');
         $('.otherLeft').css("background",'#cc3848');
+      }
+    },
+    show(param){
+      if(param == "left"){
+        this.showLeft = true;
+        this.showRight = false;
+        $(".titleLeft").addClass("active");
+        $(".titleRight").removeClass("active");
+      }
+      if(param == "right") {
+        this.showLeft = false;
+        this.showRight = true;
+        $(".titleLeft").removeClass("active");
+        $(".titleRight").addClass("active");
       }
     }
   }
@@ -367,4 +467,127 @@ export default {
           .essayIcon
             font-size:12px
             margin-right:6px
+  .notice
+    width 260px
+    height 340px
+    margin-top 30px
+    position absolute
+    right 100px
+    top 0
+    background #161b29
+    color:#fff
+    .noticeTitle
+      height 35px
+      line-height 35px
+      display flex
+      .titleItem
+        flex 1
+        text-align center
+        font-size 14px
+      .titleLeft
+      .titleRight
+        border-bottom: 1px solid #71778b;
+        border-top: 2px solid #1b2032;
+      .active 
+        background: #161b29;
+        border-bottom: 1px solid #161b29;
+        border-top: 2px solid #d7000f;
+        border-left: 1px solid #71778b;
+        border-right: 1px solid #71778b;
+    .noticeContent
+      height: 305px;
+      border-left: 1px solid #71778b;
+      border-right: 1px solid #71778b;
+      border-bottom: 1px solid #71778b;
+      .contentLeft
+        font-size:14px
+        .leftList
+          padding: 20px 10px;
+          .leftItem
+            width 238px
+            height 24px
+            line-height 24px
+            display flex
+            .iconfont
+              font-size:10px
+              margin-right 6px
+            .itemLink
+              color:#fff
+              ellipsis();
+              &:link
+                text-decoration:none;
+              &:hover
+                color:#d7000f;
+      .contentRight
+        width 100%
+        .vipRight
+          height 42px
+          line-height 42px
+          text-align center
+          font-size: 20px
+          font-weight:600
+        .rightList
+          width 240px
+          height: 200px;
+          padding 0 10px
+          position relative
+          .rightItem
+            text-align center
+            padding 5px 0
+            &:nth-child(1)
+              position: absolute;
+              left: 0;
+              top: 0;
+              right: 120px;
+              bottom: 100px;
+            &:nth-child(2)
+              position: absolute;
+              right: 0;
+              top: 0;
+              left: 120px;
+              bottom: 100px;
+            &:nth-child(3)
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              top: 100px;
+              right: 120px;
+            &:nth-child(4)
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              top: 100px;
+              left: 120px;
+            .iconWrapper
+              width 54px
+              height 54px
+              line-height 54px
+              border-radius: 6px;
+              margin:0 auto
+              box-shadow: 0 6px 12px 0 rgba(32,33,39,.08);
+              .iconfont
+                font-size 24px
+            .item1
+              background-image: linear-gradient(135deg,#ad2ab9 0,#ff618c 100%);
+            .item2
+              background-image: linear-gradient(135deg,#ff9462 0,#ffde45 100%);
+            .item3
+              background-image: linear-gradient(135deg,#745ded 0,#34b2f7 100%);
+            .item4
+              background-image: linear-gradient(135deg,#5ded9c 0,#34b2f7 100%);
+            p
+              font-size 12px
+              padding-top 5px
+              height 24px
+              line-height 24px
+        .vipDetail
+          width 210px
+          height 42px
+          line-height 42px
+          text-align center
+          font-size: 20px;
+          font-weight: 400;
+          margin:5px auto 0 auto
+          background-image: linear-gradient(135deg,#ff8e64 0,#ffe641 100%);
+          border-radius: 6px
 </style>
