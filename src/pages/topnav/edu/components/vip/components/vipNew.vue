@@ -109,6 +109,8 @@ export default {
               max-height: 66px;
               margin-bottom: 16px;
               color:#333
+              &:hover
+                color #cc0000
             .itemPrice
               font-size 18px
               color #f12c2c
