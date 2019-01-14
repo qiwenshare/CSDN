@@ -70,6 +70,7 @@ export default {
   background: #e4e9ec;
   position sticky 
   top:0
+  z-index 1
   .edunavList
     height 100%
     width 1200px

@@ -1,9 +1,9 @@
 <template>
   <div class="trainWrapper">
-    <h2 class="title">
+    <div class="title">
       <span class="icon iconfont">&#xe663;</span>
       <span class="text">实战特训营</span>
-    </h2>
+    </div>
     <div class="content">
       <ul class="list">
         <li class="item" v-for="(item,index) of trainList" :class="item.name" :key="index">

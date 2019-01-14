@@ -5,6 +5,7 @@
         <edunav></edunav>
         <intro></intro>
         <train></train>
+        <vip></vip>
       </div>
       <go-top-icon id="goTop"></go-top-icon>
   </div>
@@ -15,6 +16,7 @@ import Header from '@/pages/common/header'
 import edunav from './components/edunav'
 import intro from './components/intro'
 import train from './components/train'
+import vip from './components/vip'
 import goTopIcon from '@/pages/common/goTop'
 
 export default {
@@ -24,6 +26,7 @@ export default {
     edunav,
     intro,
     train,
+    vip,
     goTopIcon
   },
   data () {
@@ -37,7 +40,6 @@ export default {
   methods: {
     handleScroll () { //改变元素#searchBar的top值
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-      var offsetTop = document.querySelector('#recommendRight').offsetTop;
       //右侧：回到顶部图标,免费vip图标
       if(scrollTop == 0){
         document.querySelector('#goTop').style.display = 'none';
