@@ -30,6 +30,17 @@ import blockchainGitchat from '@/pages/sidenav/blockchain/gitchat'
 import blockchainTheme from '@/pages/sidenav/blockchain/theme'
 import blog from '@/pages/topnav/blog/index'
 import edu from '@/pages/topnav/edu/index'
+import download from '@/pages/topnav/download/index'
+import course from '@/pages/topnav/course/index'
+import bbs from '@/pages/topnav/bbs/index'
+import app from '@/pages/topnav/app/index'
+import ask from '@/pages/topnav/ask/index'
+import mall from '@/pages/topnav/mall/index'
+import vip from '@/pages/topnav/vip/index'
+import activity from '@/pages/topnav/activity/index'
+import job from '@/pages/topnav/job/index'
+import iteye from '@/pages/topnav/iteye/index'
+import gitchat from '@/pages/topnav/gitchat/index'
 
 Vue.use(Router)
 
@@ -189,6 +200,61 @@ export default new Router({
       path: '/edu',
       name: 'edu',
       component: edu
+    },
+    {
+      path: '/download',
+      name: 'download',
+      component: download
+    },
+    {
+      path: '/course',
+      name: 'course',
+      component: course
+    },
+    {
+      path: '/bbs',
+      name: 'bbs',
+      component: bbs
+    },
+    {
+      path: '/app',
+      name: 'app',
+      component: app
+    },
+    {
+      path: '/ask',
+      name: 'ask',
+      component: ask
+    },
+    {
+      path: '/mall',
+      name: 'mall',
+      component: mall
+    },
+    {
+      path: '/vip',
+      name: 'vip',
+      component: vip
+    },
+    {
+      path: '/activity',
+      name: 'activity',
+      component: activity
+    },
+    {
+      path: '/job',
+      name: 'job',
+      component: job
+    },
+    {
+      path: '/iteye',
+      name: 'iteye',
+      component: iteye
+    },
+    {
+      path: '/gitchat',
+      name: 'gitchat',
+      component: gitchat
     }
   ]
 })
