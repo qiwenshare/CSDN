@@ -6,6 +6,7 @@
         <intro></intro>
         <train></train>
         <vip></vip>
+        <week-update></week-update>
       </div>
       <go-top-icon id="goTop"></go-top-icon>
   </div>
@@ -17,6 +18,7 @@ import edunav from './components/edunav'
 import intro from './components/intro'
 import train from './components/train'
 import vip from './components/vip'
+import weekUpdate from './components/weekUpdate'
 import goTopIcon from '@/pages/common/goTop'
 
 export default {
@@ -27,6 +29,7 @@ export default {
     intro,
     train,
     vip,
+    weekUpdate,
     goTopIcon
   },
   data () {
