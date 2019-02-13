@@ -41,6 +41,7 @@ import activity from '@/pages/topnav/activity/index'
 import job from '@/pages/topnav/job/index'
 import iteye from '@/pages/topnav/iteye/index'
 import gitchat from '@/pages/topnav/gitchat/index'
+import userCenter from '@/pages/userCenter/index'
 
 Vue.use(Router)
 
@@ -255,6 +256,11 @@ export default new Router({
       path: '/gitchat',
       name: 'gitchat',
       component: gitchat
+    },
+    {
+      path: '/userCenter',
+      name: 'userCenter',
+      component: userCenter
     }
   ]
 })

@@ -22,7 +22,9 @@
             <li><a><span class="iconfont makeMoneyIcon">&#xe62a;</span>赚零钱</a></li>
             <li><a><span class="iconfont uploadResourceIcon">&#xe620;</span>传资源</a></li>
             <li>
-                <a class="loginCenter" @mouseenter="userActive()" @mouseleave="userDefault()">
+                <a class="loginCenter" @mouseenter="userActive()" @mouseleave="userDefault()"
+                    href="/userCenter" target="_blank"
+                >
                     <img class="headImg" src="@/assets/img/common/header/headImg.png" />
                     <span class="iconfont headImgIcon">&#xe600;</span>
                 </a>
