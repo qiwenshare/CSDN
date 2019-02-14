@@ -2,10 +2,10 @@
   <div class="userInfoWrapper">
     <div class="userTab">
       <ul class="userTop">
-        <li class="active"><a href="#/uc/profile">个人资料</a></li>
-        <li><a href="#/uc/favorite-list">我的收藏</a></li>
-        <li><a href="#/uc/follow-list">我的关注</a></li>
-        <li><a href="#/uc/fan-lit">我的粉丝</a></li>
+        <li class="active" @click="tabClick($event)"><a class="profile">个人资料</a></li>
+        <li @click="tabClick($event)"><a class="favorite">我的收藏</a></li>
+        <li @click="tabClick($event)"><a class="follow">我的关注</a></li>
+        <li @click="tabClick($event)"><a class="fan">我的粉丝</a></li>
       </ul>
       <ul class="userBottm">
         <li><a>我的博客</a></li>
@@ -15,33 +15,47 @@
       </ul>
     </div>
     <div class="userContent">
-      <h3 class="title">个人资料</h3>
-      <div class="content">
-        <div class="headerImgWrapper">
-          <img src="@/assets/img/userCenter/header.jpg" />
-          <div class="modifyHeader">修改头像</div>
-        </div>
-        <div class="infoList">
-          <div class="listTop">
-            <div class="idCard">ID：qq_36485978</div>
-            <div class="csdnInfo">
-              <span>关注</span>
-              <span>粉丝</span>
-              <span>|</span>
-              <span>C币 0</span>
-              <span>充值</span>
+      <div class="profileContent" v-show="profile">
+        <h3 class="title">个人资料</h3>
+        <div class="content">
+          <div class="headerImgWrapper">
+            <img src="@/assets/img/userCenter/header.jpg" />
+            <div class="modifyHeader">修改头像</div>
+          </div>
+          <div class="infoList">
+            <div class="listTop">
+              <div class="idCard">ID：qq_36485978</div>
+              <div class="csdnInfo">
+                <span>关注 4</span>
+                <span>粉丝 2</span>
+                <span class="splits">|</span>
+                <span>C币 0</span>
+                <a>充值</a>
+              </div>
+              <div class="userHome">
+                个人主页
+                <span class="iconfont">&#xe637;</span>
+              </div>
             </div>
-            <div class="userHome">个人主页</div>
-          </div>
-          <div class="listBottom">
-            <ul>
-              <li v-for="(item,index) of infoList" :key="index">
-                {{item.text}}
-              </li>
-            </ul>
-            <div>修改资料</div>
+            <div class="listBottom">
+              <ul>
+                <li v-for="(item,index) of infoList" :key="index" :class="item.name">
+                  {{item.text}}
+                </li>
+              </ul>
+              <div class="modifyInfo">修改资料</div>
+            </div>
           </div>
         </div>
+      </div>
+      <div class="favoriteContent" v-show="favorite">
+        我的收藏
+      </div>
+      <div class="followContent" v-show="follow">
+        我的关注
+      </div>
+      <div class="fanContent" v-show="fan">
+        我的粉丝
       </div>
     </div>
   </div>
@@ -53,31 +67,80 @@ export default {
   data(){
     return{
       infoList:[
-      { name:'',
-        text:'昵称：小鲤鱼听听'
-      },
-      { name:'',
-        text:'实名：李雅婷'
-      },
-      { name:'',
-        text:'性别：女'
-      },
-      { name:'',
-        text:'生日：1996-07-27'
-      },
-      { name:'',
-        text:'地区：中国 陕西省 西安市'
-      },
-      { name:'',
-        text:'行业：'
-      },
-      { name:'',
-        text:'职位：前端开发工程师'
-      },
-      { name:'',
-        text:'简介：'
+        { name:'nick',
+          text:'昵称：小鲤鱼听听'
+        },
+        { name:'name',
+          text:'实名：李雅婷'
+        },
+        { name:'sex',
+          text:'性别：女'
+        },
+        { name:'birth',
+          text:'生日：1996-07-27'
+        },
+        { name:'district',
+          text:'地区：中国 陕西省 西安市'
+        },
+        { name:'industry',
+          text:'行业：'
+        },
+        { name:'profession',
+          text:'职位：前端开发工程师'
+        },
+        { name:'introduction',
+          text:'简介：'
+        }
+      ],
+      profile:true,
+      favorite:false,
+      follow:false,
+      fan:false
+    }
+  },
+  methods:{
+    tabClick(e){
+      var className = $(e.target).attr("class");
+      if(className == "profile"){
+        this.profile = true;
+        this.favorite = false;
+        this.follow = false;
+        this.fan = false;
+        $(".profile").parent().addClass("active");
+        $(".favorite").parent().removeClass("active");
+        $(".follow").parent().removeClass("active");
+        $(".fan").parent().removeClass("active");
       }
-    ]
+      if(className == "favorite"){
+        this.profile = false;
+        this.favorite = true;
+        this.follow = false;
+        this.fan = false;
+        $(".profile").parent().removeClass("active");
+        $(".favorite").parent().addClass("active");
+        $(".follow").parent().removeClass("active");
+        $(".fan").parent().removeClass("active");
+      }
+      if(className == "follow"){
+        this.profile = false;
+        this.favorite = false;
+        this.follow = true;
+        this.fan = false;
+        $(".profile").parent().removeClass("active");
+        $(".favorite").parent().removeClass("active");
+        $(".follow").parent().addClass("active");
+        $(".fan").parent().removeClass("active");
+      }
+      if(className == "fan"){
+        this.profile = false;
+        this.favorite = false;
+        this.follow = false;
+        this.fan = true;
+        $(".profile").parent().removeClass("active");
+        $(".favorite").parent().removeClass("active");
+        $(".follow").parent().removeClass("active");
+        $(".fan").parent().addClass("active");
+      }
     }
   }
 }
@@ -110,9 +173,12 @@ export default {
           height: 36px;
           line-height: 36px;
           width: 100%;
+        &:hover
+          background: #fde3e4;
+          color: #ca0c16;
       .active
-        background: #b20b13;
-        color: #fff;
+        background: #b20b13 !important;
+        color: #fff !important;
     .userTop
       border-bottom: 1px solid #e9eaeb;
   .userContent
@@ -126,49 +192,82 @@ export default {
     padding: 0 32px 30px;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
     min-height: 520px;
-    .title
-      font-size: 20px;
-      color: #3d3d3d;
-      height: 90px;
-      line-height: 90px;
-      border-bottom: 1px solid #e0e0e0;
-    .content
-      position relative
-      .headerImgWrapper
-        width 100px
-        height 143px
-        margin-right: 16px;
-        position absolute
-        top 0
-        left 0
-        img
-          width: 100px;
-          height: 100px;
-          border-radius: 50%;
-          margin: 16px auto 0 auto;
-        .modifyHeader
-          text-align center
-          font-size: 14px;
-          color: #3399ea;
-          margin-top: 8px;
-          cursor: pointer;
-      .infoList
-        width: 820px;
-        position absolute
-        right 0
-        top 0
-        .listTop
-          margin-top: 16px;
-          border-bottom 1px solid #e0e0e0;
-          position relative
-          .idCard
-            font-size: 14px;
-            color: #999;
-          .userHome
-            position absolute
-            right 0
-            top 0
+    .profileContent
+      .title
+        font-size: 20px;
+        color: #3d3d3d;
+        height: 90px;
+        line-height: 90px;
+        border-bottom: 1px solid #e0e0e0;
+      .content
+        position relative
+        .headerImgWrapper
+          width 100px
+          height 143px
+          margin-right: 16px;
+          position absolute
+          top 0
+          left 0
+          img
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 16px auto 0 auto;
+          .modifyHeader
+            text-align center
             font-size: 14px;
             color: #3399ea;
-            padding-right: 9.3px;
+            margin-top: 8px;
+            cursor: pointer;
+        .infoList
+          width: 820px;
+          position absolute
+          right 0
+          top 0
+          .listTop
+            margin-top: 16px;
+            border-bottom 1px solid #e0e0e0;
+            position relative
+            .idCard
+              font-size: 14px;
+              color: #999;
+            .csdnInfo
+              margin-top: 8px;
+              margin-bottom: 16px;
+              span
+                margin-right: 16px;
+                color: rgb(77, 77, 77);
+                font-size: 14px;
+              .splits
+                color:#ccc
+              a
+                font-size: 14px;
+                color: #3399ea;
+                margin: 0;
+            .userHome
+              position absolute
+              right 0
+              top 0
+              font-size: 14px;
+              color: #3399ea;
+              padding-right: 9.3px;
+              .iconfont
+                font-size 14px
+          .listBottom
+            position relative
+            ul
+              li
+                height: 32px;
+                line-height: 32px;
+                font-size: 14px;
+                color: #4d4d4d
+            .modifyInfo
+              position absolute
+              top 0
+              right 0
+              height 32px
+              line-height 32px
+              font-size: 14px;
+              color: #3399ea;
+              cursor: pointer;
 </style>
