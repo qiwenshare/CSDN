@@ -72,7 +72,21 @@
         </div>
       </div>
       <div class="followContent" v-show="follow">
-        我的关注
+        <div class="title">
+          <h3>我的关注</h3>
+          <div class="followCount">共<span>{{followCount}}</span>人</div>
+        </div>
+        <div class="content">
+          <ul class="followList">
+            <li class="followItem" v-for="(item,index) of followList" :key="index">
+              <a class="userLink" :href="item.link" target="_blank">
+                <img class="userImg" alt="用户头像" :src="item.imgUrl" />
+                <div class="userName">{{item.text}}</div>
+              </a>
+              <div class="cancel">取消关注</div>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="fanContent" v-show="fan">
         我的粉丝
@@ -154,11 +168,23 @@ export default {
           date:"2018-12-18"
         }
       ],
+      followList:[
+        { imgUrl:require("@/assets/img/userCenter/header.jpg"),
+          text:"一只小coder"
+        },
+        { imgUrl:require("@/assets/img/userCenter/header.jpg"),
+          text:"一只小coder"
+        },
+        { imgUrl:require("@/assets/img/userCenter/header.jpg"),
+          text:"一只小coder"
+        }
+      ],
       profile:true,
       favorite:false,
       follow:false,
       fan:false,
-      collectionCount:21
+      collectionCount:21,
+      followCount:4
     }
   },
   methods:{
@@ -394,4 +420,63 @@ export default {
                   color: #ca0c16
               a.active 
                 color: #ca0c16 !important
+    .followContent
+      .title
+        position relative
+        height: 90px;
+        line-height: 90px;
+        border-bottom: 1px solid #e0e0e0;
+        h3
+          position absolute
+          left 0
+          top 0
+          font-size: 20px;
+          color: #3d3d3d;
+          font-weight: 700;
+        .followCount
+          position absolute
+          right 0
+          top 0
+          font-size: 14px;
+          color: #4d4d4d;
+      .content
+        .followList
+          .followItem
+            position relative
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            height: 82px;
+            line-height: 82px;
+            .userLink
+              color: #4d4d4d;
+              display flex
+              .userImg
+                width:50px;
+                height:50px;
+                margin 16px 16px 0 0 
+                border-radius:50%
+                cursor:pointer
+              .userName
+                color: #4d4d4d;
+                cursor:pointer
+                &:hover
+                  color: #ca0c16;
+            .cancel
+              position absolute
+              right 0
+              border: 1px solid #999;
+              border-radius: 4px;
+              font-size: 14px;
+              color: #999;
+              width: 90px;
+              height: 32px;
+              margin-top: 25px;
+              background: #fff;
+              text-align: center;
+              line-height: 32px;
+              cursor:pointer
+              &:hover
+                color: #ca0c16;
+                background: #fde3e4;
+                border: 1px solid #ca0c16;
 </style>
