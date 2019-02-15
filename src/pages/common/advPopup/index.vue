@@ -1,9 +1,10 @@
 <template>
   <div>
-    <div class="advPopupWrapper" @mouseenter="advActive()">
+    <div class="advPopupWrapper" @mouseenter="advActive()" v-show="isClose">
       <img src="@/assets/img/common/popup/adv.png"/>
     </div>
-    <div class="advPopupActiveWrapper">
+    <div class="closeAll" @click="closeAll()" v-show="isClose">关闭</div>
+    <div class="advPopupActiveWrapper" v-show="isClose">
       <div class="close" @click="advDefault()">
         <span class="iconfont closeIcon">&#xe621;</span>
       </div>
@@ -15,12 +16,20 @@
 <script>
 export default {
   name:'advPopup',
+  data(){
+    return{
+      isClose:true
+    }
+  },
   methods:{
     advActive:function() {
       $(".advPopupActiveWrapper").css("display",'block')
     },
     advDefault:function() {
       $(".advPopupActiveWrapper").css("display",'none')
+    },
+    closeAll:function() {
+      this.isClose = false
     }
   }
 }
@@ -35,6 +44,18 @@ export default {
   width 44px
   height 300px
   z-index 99
+.closeAll
+  position fixed
+  bottom:178px
+  right:8px
+  border 1px solid #000
+  border-radius: 2px;
+  width 42px
+  height 20px
+  line-height 20px
+  fon-size 12px
+  z-index 99
+  text-align center
 .advPopupActiveWrapper
   display none
   position fixed
