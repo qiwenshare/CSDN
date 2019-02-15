@@ -49,7 +49,27 @@
         </div>
       </div>
       <div class="favoriteContent" v-show="favorite">
-        我的收藏
+        <div class="title">
+          <h3>我的收藏</h3>
+          <div class="collectionCount">共<span>{{collectionCount}}</span>条</div>
+        </div>
+        <div class="content">
+          <ul class="collectionList">
+            <li class="collectionItem" v-for="(item,index) of collectionList" :key="index">
+              <a class="essayLink" :href="item.link" target="_blank">{{item.text}}</a>
+              <span class="date">{{item.date}}</span>
+              <div class="cancel">取消</div>
+            </li>
+          </ul>
+          <div class="paginationWrapper">
+            <ul class="pagination">
+              <li><a href="#"><span class="iconfont">&#xe606;</span></a></li>
+              <li><a class="active" href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#"><span class="iconfont">&#xe607;</span></a></li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="followContent" v-show="follow">
         我的关注
@@ -92,10 +112,53 @@ export default {
           text:'简介：'
         }
       ],
+      collectionList:[
+        { link:"https://blog.csdn.net/xuaner8786/article/details/80703227",
+          text:"vue监听滚动事件  实现某元素随着滚动条滚动固定距离顶部的某个位置（元素的top值实时变化） - 雪梅零落",
+          date:"2018-12-18"
+        },
+        { link:"https://blog.csdn.net/xuaner8786/article/details/80703227",
+          text:"vue监听滚动事件  实现某元素随着滚动条滚动固定距离顶部的某个位置（元素的top值实时变化） - 雪梅零落",
+          date:"2018-12-18"
+        },
+        { link:"https://blog.csdn.net/xuaner8786/article/details/80703227",
+          text:"vue监听滚动事件  实现某元素随着滚动条滚动固定距离顶部的某个位置（元素的top值实时变化） - 雪梅零落",
+          date:"2018-12-18"
+        },
+        { link:"https://blog.csdn.net/xuaner8786/article/details/80703227",
+          text:"vue监听滚动事件  实现某元素随着滚动条滚动固定距离顶部的某个位置（元素的top值实时变化） - 雪梅零落",
+          date:"2018-12-18"
+        },
+        { link:"https://blog.csdn.net/xuaner8786/article/details/80703227",
+          text:"vue监听滚动事件  实现某元素随着滚动条滚动固定距离顶部的某个位置（元素的top值实时变化） - 雪梅零落",
+          date:"2018-12-18"
+        },
+        { link:"https://blog.csdn.net/xuaner8786/article/details/80703227",
+          text:"vue监听滚动事件  实现某元素随着滚动条滚动固定距离顶部的某个位置（元素的top值实时变化） - 雪梅零落",
+          date:"2018-12-18"
+        },
+        { link:"https://blog.csdn.net/xuaner8786/article/details/80703227",
+          text:"vue监听滚动事件  实现某元素随着滚动条滚动固定距离顶部的某个位置（元素的top值实时变化） - 雪梅零落",
+          date:"2018-12-18"
+        },
+        { link:"https://blog.csdn.net/xuaner8786/article/details/80703227",
+          text:"vue监听滚动事件  实现某元素随着滚动条滚动固定距离顶部的某个位置（元素的top值实时变化） - 雪梅零落",
+          date:"2018-12-18"
+        },
+        { link:"https://blog.csdn.net/xuaner8786/article/details/80703227",
+          text:"vue监听滚动事件  实现某元素随着滚动条滚动固定距离顶部的某个位置（元素的top值实时变化） - 雪梅零落",
+          date:"2018-12-18"
+        },
+        { link:"https://blog.csdn.net/xuaner8786/article/details/80703227",
+          text:"vue监听滚动事件  实现某元素随着滚动条滚动固定距离顶部的某个位置（元素的top值实时变化） - 雪梅零落",
+          date:"2018-12-18"
+        }
+      ],
       profile:true,
       favorite:false,
       follow:false,
-      fan:false
+      fan:false,
+      collectionCount:21
     }
   },
   methods:{
@@ -147,6 +210,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import "~@/assets/styles/mixins.styl"
 .userInfoWrapper
   width: 1200px;
   margin: 0 auto;
@@ -270,4 +334,64 @@ export default {
               font-size: 14px;
               color: #3399ea;
               cursor: pointer;
+    .favoriteContent
+      .title
+        position relative
+        height: 90px;
+        line-height: 90px;
+        border-bottom: 1px solid #e0e0e0;
+        h3
+          position absolute
+          left 0
+          top 0
+          font-size: 20px;
+          color: #3d3d3d;
+          font-weight: 700;
+        .collectionCount
+          position absolute
+          right 0
+          top 0
+          font-size: 14px;
+          color: #4d4d4d;
+      .content
+        .collectionList
+          .collectionItem
+            padding: 16px 0;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            .essayLink
+              width: 78%;
+              line-height: 24px;
+              color: #4d4d4d;
+              ellipsis()
+            .date
+              width: 13%;
+              text-align: right;
+              margin-left: 10px;
+              color: #ccc;
+            .cancel
+              width: 8%;
+              text-align: center;
+              color: #999;
+              cursor: pointer;
+            &:last-child
+              border-bottom:none
+        .paginationWrapper
+          text-align:center
+          margin-top: 30px
+          .pagination 
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            li 
+              display: inline;
+              a 
+                color: black;
+                float: left;
+                padding: 8px 16px;
+                text-decoration: none;
+                &:hover
+                  color: #ca0c16
+              a.active 
+                color: #ca0c16 !important
 </style>
