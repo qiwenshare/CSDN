@@ -11,18 +11,6 @@
       <div class="swiper-button-prev swiper-button" slot="button-prev"></div>
       <div class="swiper-button-next swiper-button" slot="button-next"></div>
     </swiper>
-    <div class="advRight">
-      <div :style="img2">
-        <a>
-          <p>致敬阅读者，超值好书限时特价</p>
-        </a>
-      </div>
-      <div :style="img3"> 
-        <a>
-          <p>Python 快速入门实战教程</p>
-        </a>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -86,16 +74,16 @@ export default {
   display flex
   margin:0 auto 8px
   .advLeft
-    width 508px
+    width 100%
     height 206px
     .slide
-      width 100%
+      width 760px
       height 100%
       position relative
       left 0
       top 0
       .swipe-img
-        width 100%
+        width 760px
         height 100%
       .swipe-text
         width 95%
@@ -125,32 +113,4 @@ export default {
       background url('/static/mainAdvSwiper/prev.png') no-repeat
     .swiper-button-next
       background url('/static/mainAdvSwiper/next.png') no-repeat
-  .advRight
-    padding-left: 2px;
-    width: 250px;
-    height: 206px;
-    div
-      position relative
-      left 0
-      top 0
-      height 102px
-      a
-        display block
-        width 100%
-        height 100%
-        overflow hidden
-        background: linear-gradient(to top, #00000033 , #ffffff33)
-        p
-          width 90%
-          height 16px
-          line-height 16px
-          position:absolute
-          bottom:5px
-          left:5px
-          color:#fff
-          font-size:10px
-          text-shadow: 0 1px 2px rgba(0,0,0,0.6);
-          ellipsis()
-      &:last-child
-        margin-top:2px
 </style>
