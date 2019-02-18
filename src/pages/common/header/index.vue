@@ -207,7 +207,7 @@ export default {
                 a   
                     height: 26px
                     line-height:26px
-                    color:#3D3D3D;
+                    color:#fff;
                     font-size:14px;
                     &:hover
                         color:#CA0C16
@@ -221,7 +221,7 @@ export default {
                     .uploadResourceIcon
                         color:blue
                     .headImgIcon
-                        color:#888
+                        color:#fff
                         font-size:10px
                         position: absolute;
                         right: 10px;
@@ -229,6 +229,8 @@ export default {
                     .headImg
                         width:26px
                         height:auto
+                        background: #fff;
+                        border-radius: 50%;
                 &:first-child
                     padding:0
                 .searchWrapper
@@ -266,7 +268,7 @@ export default {
                     top: 40px;
                     right: 10px;
                     z-index: 99999;
-                    background-color: #fff;
+                    background: url("~@/assets/img/common/header/header-spring.jpg");
                     border-radius: 0 0 4px 4px;
                     box-shadow: 0 4px 8px 0 rgba(0,0,0,.1);
                     width: 124px;
@@ -283,7 +285,7 @@ export default {
                                     position absolute
                                     left 16px
                                     font-size 14px
-                                    color #ccc
+                                    color #fff
                                 .itemText
                                     position absolute
                                     left 40px
