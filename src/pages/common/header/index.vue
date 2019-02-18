@@ -229,7 +229,8 @@ export default {
                     height: 26px;
                     border: 1px solid #CCC;
                     border-radius: 4px;
-                    color: red;
+                    color: #aaa;
+                    background: #fff;
                     .searchText
                         color: #4D4D4D;
                         float: left;
