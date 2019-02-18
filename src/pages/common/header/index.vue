@@ -20,14 +20,15 @@
             </li>
             <li><a><span class="iconfont writeBlogIcon">&#xe629;</span>写博客</a></li>
             <li><a><span class="iconfont makeMoneyIcon">&#xe62a;</span>赚零钱</a></li>
-            <li><a><span class="iconfont uploadResourceIcon">&#xe620;</span>传资源</a></li>
+            <li><a><span class="iconfont uploadResourceIcon">&#xe623;</span>消息</a></li>
             <li>
                 <a class="loginCenter" @mouseenter="userActive()" @mouseleave="userDefault()"
                     href="/userCenter" target="_blank"
                 >
                     <img class="headImg" src="@/assets/img/common/header/headImg.png" />
-                    <span class="iconfont headImgIcon">&#xe600;</span>
                 </a>
+                    <span class="iconfont headImgIcon" @mouseenter="userActive()" @mouseleave="userDefault()" @click="userActive()">&#xe600;</span>
+                
                 <div class="userControl" @mouseenter="userActive()" @mouseleave="userDefault()" v-show="userVisible">
                     <ul class="userConList">
                         <li class="userItem" v-for="(item,index) of userConList" :key="index">
@@ -210,7 +211,7 @@ export default {
                     color:#fff;
                     font-size:14px;
                     &:hover
-                        color:#CA0C16
+                        color:#ffd900
                     .iconfont
                         font-size:16px
                         margin-right:3px
@@ -219,18 +220,8 @@ export default {
                     .makeMoneyIcon
                         color:orange
                     .uploadResourceIcon
-                        color:blue
-                    .headImgIcon
                         color:#fff
-                        font-size:10px
-                        position: absolute;
-                        right: 10px;
-                        top: 1px;
-                    .headImg
-                        width:26px
-                        height:auto
-                        background: #fff;
-                        border-radius: 50%;
+                        font-weight: 600;
                 &:first-child
                     padding:0
                 .searchWrapper
@@ -263,6 +254,20 @@ export default {
                     width 26px;
                     height: 40px;
                     line-height: 40px;
+                    .headImg
+                        width:26px
+                        height:auto
+                        background: #fff;
+                        border-radius: 50%;
+                .headImgIcon
+                    color:#fff
+                    font-size:10px
+                    position: absolute;
+                    right: 24px;
+                    width: 16px;
+                    height: 40px;
+                    line-height: 40px;
+                    cursor: default;
                 .userControl
                     position: absolute;
                     top: 40px;
