@@ -8,6 +8,13 @@
       <!-- Optional controls -->
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
+    <div class="officialBlog" v-if="fromLink == 'blog'">
+      <a class="blogLink" href="https://blog.csdn.net/blogdevteam/">
+        <img class="headImg" src="@/assets/img/topnav/blog/right/officialBlog/blogdevteam.jpg" />
+        <h3 class="title">CSDN官方博客</h3>
+        <div class="btn">点击进入</div>
+      </a>
+    </div>
     <div class="blogger" v-if="fromLink == 'blog'">
       <div class="bloggerTitle">
         <span>|</span>
@@ -628,6 +635,40 @@ export default {
         background-color #c92027
         transition:background-color 0.5s;
 	      -webkit-transition:background-color 0.5s; /* Safari */
+  .officialBlog
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04);
+    background: #fff;
+    padding: 16px 16px;
+    margin-bottom: 8px;
+    margin-top: 0;
+    .blogLink
+      display:flex
+      align-items: center
+      .headImg
+        margin-right:10px
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      .title
+        font-size:18px
+        color:#3d3d3d
+        font-weight: normal;
+      .btn
+        margin-left: auto;
+        padding: 0 8px;
+        line-height: 26px;
+        font-size: 14px;
+        color: #ca0c16;
+        border: 1px solid #ca0c16;
+        border-radius: 4px;
+        height: 28px;
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        text-decoration: none;
+        font-weight: bold;
+        &:hover
+          background-color: #ca0c16;
+          color: #fff;
   .blogger
     padding:16px
     background-color #fff

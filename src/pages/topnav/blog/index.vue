@@ -2,7 +2,7 @@
   <div class="blogWrapper">
       <Header></Header>
       <div class="contentSidebar">
-        <sidebar id="sidebar"></sidebar>
+        <!-- <sidebar id="sidebar"></sidebar> -->
         <div class="contentWrapper">
           <recommend-top :list="recommendTopList"></recommend-top>
           <div class="contentMain">
@@ -73,12 +73,12 @@ export default {
         document.querySelector('#freeVip').style.top = '430px';
       }
       //左侧：侧边导航栏
-      if(scrollTop <= 128){
-        offsetTop = 50-Number(scrollTop);
-        document.querySelector('#sidebar').style.top = offsetTop+'px';
-      }else{
-        document.querySelector('#sidebar').style.top = '-128px';
-      }
+      // if(scrollTop <= 128){
+      //   offsetTop = 50-Number(scrollTop);
+      //   document.querySelector('#sidebar').style.top = offsetTop+'px';
+      // }else{
+      //   document.querySelector('#sidebar').style.top = '-128px';
+      // }
       //右侧：推荐信息模块
       if(scrollTop <= 2333){
         offsetTop = 148-Number(scrollTop);
@@ -112,7 +112,8 @@ export default {
     .contentWrapper
       width:1074px
       position relative
-      left:110px
+      // left:110px
+      margin: 0 auto;
       .contentMain
         display flex
         .mainAdv
@@ -120,4 +121,6 @@ export default {
           margin-right 14px
         #recommendRight
           top:148px;
+          left:911.5px
+          
 </style>
