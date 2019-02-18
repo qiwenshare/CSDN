@@ -3,7 +3,7 @@
     <nav class="header">
         <ul class="headerList headerLeft">
             <li>
-                <a><img src="@/assets/img/common/header/csdnLog.png"/></a>
+                <a><img src="@/assets/img/common/header/spring-logo.png"/></a>
             </li>
             <li v-for="(item,index) in listLeft" :key="index">
                 <router-link :to="item.topnavLink" class="topnavDiv" tag="div">{{item.name}}</router-link>
@@ -50,6 +50,9 @@ export default {
     data() {
       return {
         listLeft:[
+            {   name:'首页',
+                topnavLink:'/index'
+            },
             {   name:'博客',
                 topnavLink:'/blog'
             },
@@ -161,28 +164,30 @@ export default {
 <style lang="stylus" scoped>
 @import "~@/assets/styles/mixins.styl"
 .router-link-active
-  border-bottom:2px solid #CA0C16
+    color:#ffd900
+    border-bottom:2px solid #ffd900;
 .headerWrapper
     height:40px
     min-width: 1200px;
     width:100%
     font-size:14px
-    background-color:#fff
+    background: url("~@/assets/img/common/header/header-spring.jpg") repeat-x;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.05)
     .header
         display:flex
         height:100%
         margin:0 52px
         .headerLeft
-            flex:6
+            flex:7
             li
                 height:40px
                 padding:0 8px
                 float:left
                 text-align:center
+                color:#fff
                 verticalMiddle() 
                 &:hover
-                    color:#CA0C16
+                    color:#ffd900
                 .topnavDiv
                     height:38px
                     line-height 38px
@@ -219,11 +224,13 @@ export default {
                         color:#888
                         font-size:10px
                         position: absolute;
-                        right: 37px;
+                        right: 10px;
                         top: 1px;
                     .headImg
                         width:26px
                         height:auto
+                &:first-child
+                    padding:0
                 .searchWrapper
                     width: 160px;
                     height: 26px;
@@ -257,7 +264,7 @@ export default {
                 .userControl
                     position: absolute;
                     top: 40px;
-                    right: 30px;
+                    right: 10px;
                     z-index: 99999;
                     background-color: #fff;
                     border-radius: 0 0 4px 4px;
