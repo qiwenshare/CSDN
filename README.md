@@ -1,6 +1,6 @@
 # csdn
 
-> 用vue模仿模SDN网站仿CSD[C网站站
+> vue-cli2脚手架搭建，模仿模CSDN网站，在线演示地址：[奇文社区-开源](http://www.qiwenshare.com/os)
 
 ## Build Setup
 
