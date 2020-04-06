@@ -3,7 +3,7 @@
     <swiper class="advLeft" :options="swiperOption">
       <!-- slides -->
       <swiper-slide class="slide" v-for="(item,index) of swiperImgList" :key="index">
-        <img class="swipe-img" :src="item.imgUrl">
+        <img class="swipe-img" :src="item.imgUrl" />
         <div class="swipe-text">{{item.text}}</div>
       </swiper-slide>
       <!-- Optional controls -->
@@ -15,64 +15,73 @@
 </template>
 
 <script>
-
 export default {
-  name:'mainAdv',
+  name: 'mainAdv',
   data () {
     return {
-      img2:{
-        backgroundImage:"url(" + require("@/assets/img/topnav/blog/swiperRight/adv1.png") + ") ",
-        backgroundPosition: "center center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover"
+      img2: {
+        backgroundImage:
+          'url(' +
+          require('@/assets/img/topnav/blog/swiperRight/adv1.png') +
+          ') ',
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
       },
-      img3:{
-        backgroundImage:"url(" + require("@/assets/img/topnav/blog/swiperRight/adv2.png") + ") ",
-        backgroundPosition: "center center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover"
+      img3: {
+        backgroundImage:
+          'url(' +
+          require('@/assets/img/topnav/blog/swiperRight/adv2.png') +
+          ') ',
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
       },
-      swiperOption:{
+      swiperOption: {
         pagination: {
           el: '.swiper-pagination',
-          type: 'bullets',
+          type: 'bullets'
         },
-        autoplay:true,
-        loop:true,
+        autoplay: true,
+        loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          prevEl: '.swiper-button-prev'
         }
       },
-      swiperImgList:[
-        { imgUrl:require("@/assets/img/topnav/blog/swiper/adv1.png"),
-          text:'GitChat 陪你一起经历不平凡'
+      swiperImgList: [
+        {
+          imgUrl: require('@/assets/img/topnav/blog/swiper/adv1.png'),
+          text: 'GitChat 陪你一起经历不平凡'
         },
-        { imgUrl:require("@/assets/img/topnav/blog/swiper/adv2.png"),
-          text:'大数据预测CSDN2018博客之星评选结果分享 沉淀 ！CSDN 2018博客之星年度评选正式上线'
+        {
+          imgUrl: require('@/assets/img/topnav/blog/swiper/adv2.png'),
+          text:
+            '大数据预测CSDN2018博客之星评选结果分享 沉淀 ！CSDN 2018博客之星年度评选正式上线'
         },
-        { imgUrl:require("@/assets/img/topnav/blog/swiper/adv3.jpg"),
-          text:'CSDN博文周刊第2期 |让Elasticsearch飞起来!——性能优化实践干货'
+        {
+          imgUrl: require('@/assets/img/topnav/blog/swiper/adv3.jpg'),
+          text: 'CSDN博文周刊第2期 |让Elasticsearch飞起来!——性能优化实践干货'
         }
       ]
     }
   },
-  methods:{
+  methods: {
     pagiActive () {
-      $(".swiper-button").css("display","block");
+      $('.swiper-button').css('display', 'block')
     },
     pagiDefault () {
-      $(".swiper-button").css("display","none");
+      $('.swiper-button').css('display', 'none')
     }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-@import "~@/assets/styles/mixins.styl"
+@import '~@/assets/styles/mixins.styl'
 .advWrapper
   display flex
-  margin:0 auto 8px
+  margin 0 auto 8px
   .advLeft
     width 100%
     height 206px
@@ -87,26 +96,26 @@ export default {
         height 100%
       .swipe-text
         width 95%
-        height:20px
+        height 20px
         line-height 20px
         color #fff
         position absolute
-        bottom:25px
-        left:13px
+        bottom 25px
+        left 13px
         ellipsis()
     .swiper-pagination
-      text-align:left
-      text-indent:10px
+      text-align left
+      text-indent 10px
       &>>> .swiper-pagination-bullet
         background #ccc
         opacity 1
         width 6px
-        height:6px
+        height 6px
       &>>> .swiper-pagination-bullet-active
         width 22px
         border-radius 3px
-        transition:width 0.5s;
-	      -webkit-transition:width 0.5s; /* Safari */
+        transition width 0.5s
+        -webkit-transition width 0.5s /* Safari */
     .swiper-button
       display nonne
     .swiper-button-prev

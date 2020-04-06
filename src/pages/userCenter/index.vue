@@ -1,7 +1,7 @@
 <template>
   <div class="userCenterWrapper">
-      <Header></Header>
-      <user-info-list></user-info-list>
+    <Header></Header>
+    <user-info-list></user-info-list>
   </div>
 </template>
 
@@ -21,6 +21,6 @@ export default {
 <style lang="stylus" scoped>
 .userCenterWrapper
   position relative
-  top:0
-  left:0
+  top 0
+  left 0
 </style>

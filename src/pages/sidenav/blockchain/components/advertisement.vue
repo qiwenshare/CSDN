@@ -3,7 +3,7 @@
     <swiper class="advLeft" :options="swiperOption">
       <!-- slides -->
       <swiper-slide class="slide" v-for="(item,index) of swiperImgList" :key="index">
-        <img class="swipe-img" :src="item.imgUrl">
+        <img class="swipe-img" :src="item.imgUrl" />
         <div class="swipe-text">{{item.text}}</div>
       </swiper-slide>
       <!-- Optional controls -->
@@ -17,7 +17,7 @@
           <p>今日头条能干掉微信么？</p>
         </a>
       </div>
-      <div :style="img3"> 
+      <div :style="img3">
         <a>
           <p>“深度学习之父”大谈AI：寒冬不会出现，论文评审机制有损创新</p>
         </a>
@@ -27,61 +27,68 @@
 </template>
 
 <script>
-
 export default {
-  name:'mainAdv',
+  name: 'mainAdv',
   data () {
     return {
-      img2:{
-        backgroundImage:"url(" + require("@/assets/img/sidenav/blockchain/adv/adv1.png") + ") ",
-        backgroundPosition: "center center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover"
+      img2: {
+        backgroundImage:
+          'url(' +
+          require('@/assets/img/sidenav/blockchain/adv/adv1.png') +
+          ') ',
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
       },
-      img3:{
-        backgroundImage:"url(" + require("@/assets/img/sidenav/blockchain/adv/adv2.png") + ") ",
-        backgroundPosition: "center center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover"
+      img3: {
+        backgroundImage:
+          'url(' +
+          require('@/assets/img/sidenav/blockchain/adv/adv2.png') +
+          ') ',
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
       },
-      swiperOption:{
+      swiperOption: {
         pagination: {
           el: '.swiper-pagination',
-          type: 'bullets',
+          type: 'bullets'
         },
-        autoplay:true,
-        loop:true,
+        autoplay: true,
+        loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          prevEl: '.swiper-button-prev'
         }
       },
-      swiperImgList:[
-        { imgUrl:require("@/assets/img/sidenav/blockchain/swiper/swiper1.png"),
-          text:'猜对今年ICO大溃败与BCH算力战，能猜对明年的区块链吗'
+      swiperImgList: [
+        {
+          imgUrl: require('@/assets/img/sidenav/blockchain/swiper/swiper1.png'),
+          text: '猜对今年ICO大溃败与BCH算力战，能猜对明年的区块链吗'
         },
-        { imgUrl:require("@/assets/img/sidenav/blockchain/swiper/swiper2.png"),
-          text:'16岁开发者从辍学歧视，到开发爆款应用，其人生远非成人想象'
+        {
+          imgUrl: require('@/assets/img/sidenav/blockchain/swiper/swiper2.png'),
+          text: '16岁开发者从辍学歧视，到开发爆款应用，其人生远非成人想象'
         }
       ]
     }
   },
-  methods:{
+  methods: {
     pagiActive () {
-      $(".swiper-button").css("display","block");
+      $('.swiper-button').css('display', 'block')
     },
     pagiDefault () {
-      $(".swiper-button").css("display","none");
+      $('.swiper-button').css('display', 'none')
     }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-@import "~@/assets/styles/mixins.styl"
+@import '~@/assets/styles/mixins.styl'
 .advWrapper
   display flex
-  margin:0 auto
+  margin 0 auto
   .advLeft
     width 508px
     height 206px
@@ -96,26 +103,26 @@ export default {
         height 100%
       .swipe-text
         width 95%
-        height:20px
+        height 20px
         line-height 20px
         color #fff
         position absolute
-        bottom:25px
-        left:13px
+        bottom 25px
+        left 13px
         ellipsis()
     .swiper-pagination
-      text-align:left
-      text-indent:10px
+      text-align left
+      text-indent 10px
       &>>> .swiper-pagination-bullet
         background #ccc
         opacity 1
         width 6px
-        height:6px
+        height 6px
       &>>> .swiper-pagination-bullet-active
         width 22px
         border-radius 3px
-        transition:width 0.5s;
-	      -webkit-transition:width 0.5s; /* Safari */
+        transition width 0.5s
+        -webkit-transition width 0.5s /* Safari */
     .swiper-button
       display nonne
     .swiper-button-prev
@@ -123,9 +130,9 @@ export default {
     .swiper-button-next
       background url('/static/mainAdvSwiper/next.png') no-repeat
   .advRight
-    padding-left: 2px;
-    width: 250px;
-    height: 206px;
+    padding-left 2px
+    width 250px
+    height 206px
     div
       position relative
       left 0
@@ -136,18 +143,18 @@ export default {
         width 100%
         height 100%
         overflow hidden
-        background: linear-gradient(to top, #00000033 , #ffffff33)
+        background linear-gradient(to top, #00000033, #ffffff33)
         p
           width 90%
           height 16px
           line-height 16px
-          position:absolute
-          bottom:5px
-          left:5px
-          color:#fff
-          font-size:10px
-          text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+          position absolute
+          bottom 5px
+          left 5px
+          color #fff
+          font-size 10px
+          text-shadow 0 1px 2px rgba(0, 0, 0, 0.6)
           ellipsis()
       &:last-child
-        margin-top:2px
+        margin-top 2px
 </style>

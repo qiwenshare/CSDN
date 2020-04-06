@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -12,6 +12,6 @@ export default {
 
 <style lang="stylus" scoped>
 #app
-  width:100%
-  background: #f5f6f7
+  width 100%
+  background #f5f6f7
 </style>

@@ -7,7 +7,7 @@
     <div class="content">
       <ul class="list">
         <li class="item" v-for="(item,index) of trainList" :class="item.name" :key="index">
-          <img class="img" :src="item.imgUrl"/>
+          <img class="img" :src="item.imgUrl" />
           <div class="text">{{item.text}}</div>
         </li>
       </ul>
@@ -17,21 +17,24 @@
 
 <script>
 export default {
-  name:"train",
+  name: 'train',
   data () {
     return {
-      trainList:[
-        { name:"item1",
-          imgUrl:require("@/assets/img/topnav/edu/train/item1.jpg"),
-          text:"人工智能工程师"
+      trainList: [
+        {
+          name: 'item1',
+          imgUrl: require('@/assets/img/topnav/edu/train/item1.jpg'),
+          text: '人工智能工程师'
         },
-        { name:"item2",
-          imgUrl:require("@/assets/img/topnav/edu/train/item2.jpg"),
-          text:"Python全栈实训营"
+        {
+          name: 'item2',
+          imgUrl: require('@/assets/img/topnav/edu/train/item2.jpg'),
+          text: 'Python全栈实训营'
         },
-        { name:"item3",
-          imgUrl:require("@/assets/img/topnav/edu/train/item3.jpg"),
-          text:"区块链工程师"
+        {
+          name: 'item3',
+          imgUrl: require('@/assets/img/topnav/edu/train/item3.jpg'),
+          text: '区块链工程师'
         }
       ]
     }
@@ -46,12 +49,12 @@ export default {
   .title
     padding-bottom 12px
     .icon
-      color: #e44859;
-      font-size: 28px;
-      margin-right: 8px;
+      color #e44859
+      font-size 28px
+      margin-right 8px
     .text
-      color: #333;
-      font-size: 18px;
+      color #333
+      font-size 18px
       font-weight 400
   .content
     .list
@@ -63,17 +66,16 @@ export default {
         .img
           width 360px
           height 130px
-          border-radius: 4px;
+          border-radius 4px
         .text
           width 126px
           height 22px
           line-height 22px
           margin 8px auto 0
           padding 0 40px
-          border: 1px solid #eaeaea;
-          border-radius: 4px;
+          border 1px solid #eaeaea
+          border-radius 4px
           text-align center
-          font-size: 14px;
+          font-size 14px
           font-weight bold
-
 </style>

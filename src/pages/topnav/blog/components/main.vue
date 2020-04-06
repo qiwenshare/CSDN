@@ -35,79 +35,99 @@
 
 <script>
 export default {
-  name:'homepageMain',
-  data(){
-    return{
-      essayList:[
-        { link:"https://blog.csdn.net/weixin_34026484?utm_source=feed",
-          imgUrl:require("@/assets/img/topnav/blog/contentList/headImg.jpg"),
-          userName:"weixin_34026484",
-          title:"Java基础——调用CMD命令",
-          summary:"1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ",
-          date:"10月16日"
+  name: 'homepageMain',
+  data () {
+    return {
+      essayList: [
+        {
+          link: 'https://blog.csdn.net/weixin_34026484?utm_source=feed',
+          imgUrl: require('@/assets/img/topnav/blog/contentList/headImg.jpg'),
+          userName: 'weixin_34026484',
+          title: 'Java基础——调用CMD命令',
+          summary:
+            '1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ',
+          date: '10月16日'
         },
-        { link:"https://blog.csdn.net/weixin_34026484?utm_source=feed",
-          imgUrl:require("@/assets/img/topnav/blog/contentList/headImg.jpg"),
-          userName:"weixin_34026484",
-          title:"Java基础——调用CMD命令",
-          summary:"1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ",
-          date:"10月16日"
+        {
+          link: 'https://blog.csdn.net/weixin_34026484?utm_source=feed',
+          imgUrl: require('@/assets/img/topnav/blog/contentList/headImg.jpg'),
+          userName: 'weixin_34026484',
+          title: 'Java基础——调用CMD命令',
+          summary:
+            '1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ',
+          date: '10月16日'
         },
-        { link:"https://blog.csdn.net/weixin_34026484?utm_source=feed",
-          imgUrl:require("@/assets/img/topnav/blog/contentList/headImg.jpg"),
-          userName:"weixin_34026484",
-          title:"Java基础——调用CMD命令",
-          summary:"1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ",
-          date:"10月16日"
+        {
+          link: 'https://blog.csdn.net/weixin_34026484?utm_source=feed',
+          imgUrl: require('@/assets/img/topnav/blog/contentList/headImg.jpg'),
+          userName: 'weixin_34026484',
+          title: 'Java基础——调用CMD命令',
+          summary:
+            '1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ',
+          date: '10月16日'
         },
-        { link:"https://blog.csdn.net/weixin_34026484?utm_source=feed",
-          imgUrl:require("@/assets/img/topnav/blog/contentList/headImg.jpg"),
-          userName:"weixin_34026484",
-          title:"Java基础——调用CMD命令",
-          summary:"1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ",
-          date:"10月16日"
+        {
+          link: 'https://blog.csdn.net/weixin_34026484?utm_source=feed',
+          imgUrl: require('@/assets/img/topnav/blog/contentList/headImg.jpg'),
+          userName: 'weixin_34026484',
+          title: 'Java基础——调用CMD命令',
+          summary:
+            '1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ',
+          date: '10月16日'
         },
-        { link:"https://blog.csdn.net/weixin_34026484?utm_source=feed",
-          imgUrl:require("@/assets/img/topnav/blog/contentList/headImg.jpg"),
-          userName:"weixin_34026484",
-          title:"Java基础——调用CMD命令",
-          summary:"1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ",
-          date:"10月16日"
+        {
+          link: 'https://blog.csdn.net/weixin_34026484?utm_source=feed',
+          imgUrl: require('@/assets/img/topnav/blog/contentList/headImg.jpg'),
+          userName: 'weixin_34026484',
+          title: 'Java基础——调用CMD命令',
+          summary:
+            '1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ',
+          date: '10月16日'
         },
-        { link:"https://blog.csdn.net/weixin_34026484?utm_source=feed",
-          imgUrl:require("@/assets/img/topnav/blog/contentList/headImg.jpg"),
-          userName:"weixin_34026484",
-          title:"Java基础——调用CMD命令",
-          summary:"1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ",
-          date:"10月16日"
+        {
+          link: 'https://blog.csdn.net/weixin_34026484?utm_source=feed',
+          imgUrl: require('@/assets/img/topnav/blog/contentList/headImg.jpg'),
+          userName: 'weixin_34026484',
+          title: 'Java基础——调用CMD命令',
+          summary:
+            '1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ',
+          date: '10月16日'
         },
-        { link:"https://blog.csdn.net/weixin_34026484?utm_source=feed",
-          imgUrl:require("@/assets/img/topnav/blog/contentList/headImg.jpg"),
-          userName:"weixin_34026484",
-          title:"Java基础——调用CMD命令",
-          summary:"1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ",
-          date:"10月16日"
+        {
+          link: 'https://blog.csdn.net/weixin_34026484?utm_source=feed',
+          imgUrl: require('@/assets/img/topnav/blog/contentList/headImg.jpg'),
+          userName: 'weixin_34026484',
+          title: 'Java基础——调用CMD命令',
+          summary:
+            '1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ',
+          date: '10月16日'
         },
-        { link:"https://blog.csdn.net/weixin_34026484?utm_source=feed",
-          imgUrl:require("@/assets/img/topnav/blog/contentList/headImg.jpg"),
-          userName:"weixin_34026484",
-          title:"Java基础——调用CMD命令",
-          summary:"1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ",
-          date:"10月16日"
+        {
+          link: 'https://blog.csdn.net/weixin_34026484?utm_source=feed',
+          imgUrl: require('@/assets/img/topnav/blog/contentList/headImg.jpg'),
+          userName: 'weixin_34026484',
+          title: 'Java基础——调用CMD命令',
+          summary:
+            '1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ',
+          date: '10月16日'
         },
-        { link:"https://blog.csdn.net/weixin_34026484?utm_source=feed",
-          imgUrl:require("@/assets/img/topnav/blog/contentList/headImg.jpg"),
-          userName:"weixin_34026484",
-          title:"Java基础——调用CMD命令",
-          summary:"1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ",
-          date:"10月16日"
+        {
+          link: 'https://blog.csdn.net/weixin_34026484?utm_source=feed',
+          imgUrl: require('@/assets/img/topnav/blog/contentList/headImg.jpg'),
+          userName: 'weixin_34026484',
+          title: 'Java基础——调用CMD命令',
+          summary:
+            '1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ',
+          date: '10月16日'
         },
-        { link:"https://blog.csdn.net/weixin_34026484?utm_source=feed",
-          imgUrl:require("@/assets/img/topnav/blog/contentList/headImg.jpg"),
-          userName:"weixin_34026484",
-          title:"Java基础——调用CMD命令",
-          summary:"1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ",
-          date:"10月16日"
+        {
+          link: 'https://blog.csdn.net/weixin_34026484?utm_source=feed',
+          imgUrl: require('@/assets/img/topnav/blog/contentList/headImg.jpg'),
+          userName: 'weixin_34026484',
+          title: 'Java基础——调用CMD命令',
+          summary:
+            '1、什么是CMD命令?简单说，就是运行，按住Windows+R键，弹出框中输入cmd，即可执行命令。常见的CMD命令有：1. gpedit.msc-----组策略2. sndrec32-------录音机3. Nslookup-------IP地址侦测器4. explorer-------打开资源管理器5. logoff---------注销... ',
+          date: '10月16日'
         }
       ]
     }
@@ -115,6 +135,4 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-
-</style>
+<style lang="stylus" scoped></style>

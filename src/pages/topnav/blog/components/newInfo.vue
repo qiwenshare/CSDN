@@ -7,29 +7,29 @@
 
 <script>
 export default {
-  name:'newInfo'
+  name: 'newInfo'
 }
 </script>
 
 <style lang="stylus" scoped>
 .newRecommendInfoWrapper
   position sticky
-  top:0
-  left:0
-  background-color rgba(244,68,68,0.9)
-  font-size:14px
-  z-index:20
+  top 0
+  left 0
+  background-color rgba(244, 68, 68, 0.9)
+  font-size 14px
+  z-index 20
   .tip
     display block
-    color:#fff
+    color #fff
     text-align center
     height 32px
     line-height 32px
   .deleteIcon
     position absolute
     right 20px
-    top:10px
-    font-size:12px
+    top 10px
+    font-size 12px
     margin-left 16px
-    color:#ccc
+    color #ccc
 </style>

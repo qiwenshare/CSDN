@@ -8,13 +8,11 @@
 import contentList from '@/pages/common/contentList'
 
 export default {
-  name:'homepageMain',
-  components:{
+  name: 'homepageMain',
+  components: {
     contentList
   }
 }
 </script>
 
-<style lang="stylus" scoped>
-
-</style>
+<style lang="stylus" scoped></style>

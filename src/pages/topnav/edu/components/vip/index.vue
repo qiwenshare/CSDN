@@ -12,8 +12,8 @@ import secondKill from './components/secondKill'
 import vipNew from './components/vipNew'
 
 export default {
-  name:'vip',
-  components:{
+  name: 'vip',
+  components: {
     vipExchange,
     secondKill,
     vipNew
@@ -27,6 +27,6 @@ export default {
   left 0
   right 0
   top 0
-  width: 1170px;
-  margin: 0 auto 30px;
+  width 1170px
+  margin 0 auto 30px
 </style>

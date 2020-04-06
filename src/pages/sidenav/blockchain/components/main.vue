@@ -1,8 +1,6 @@
 <template>
   <div class="mainWrapper">
-    <div class="contentListTile">
-      {{contentListTitle}}
-    </div>
+    <div class="contentListTile">{{contentListTitle}}</div>
     <content-list></content-list>
   </div>
 </template>
@@ -11,27 +9,27 @@
 import contentList from '@/pages/common/contentList'
 
 export default {
-  name:'blockchainMain',
-  components:{
+  name: 'blockchainMain',
+  components: {
     contentList
   },
-  props:{
-    contentListTitle:String
+  props: {
+    contentListTitle: String
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-.mainWrapper 
+.mainWrapper
   width 100%
   .contentListTile
-    color: #e3635d;
-    font-size: 18px;
-    height: 43px;
-    line-height: 43px;
-    border-bottom: 1px solid #ebeced;
-    background: #fff;
-    padding-left: 24px;
-    width: 736px;
-    font-weight: 700;
+    color #e3635d
+    font-size 18px
+    height 43px
+    line-height 43px
+    border-bottom 1px solid #ebeced
+    background #fff
+    padding-left 24px
+    width 736px
+    font-weight 700
 </style>
