@@ -2,7 +2,7 @@
   <div class="contentListWrapper">
     <ul class="contentList">
       <li
-        v-for="item of fixContentItem('essay')"
+        v-for="(item,index) of fixContentItem('essay')"
         :key="item.name"
         :class="'essayLi border-bottom '+item.name"
       >
@@ -10,7 +10,7 @@
           <a class="title" href="https://www.baidu.com" target="_blank">
             <h3>{{item.title}}</h3>
           </a>
-          <span class="iconfont deleteIcon">&#xe621;</span>
+          <span class="iconfont deleteIcon" @click="deleteEssayItem(index)">&#xe621;</span>
         </div>
         <div v-if="item.content != ''" class="liMiddle">
           <p>{{item.content}}</p>
@@ -429,6 +429,9 @@ export default {
         }
       })
       return res
+    },
+    deleteEssayItem (index) {
+      this.contentList.splice(index, 1)
     }
   }
 }
@@ -470,6 +473,7 @@ export default {
           font-size 12px
           margin-left 16px
           color #ccc
+          cursor pointer
       .liMiddle
         height 24px
         line-height 24px

@@ -83,7 +83,7 @@ export default {
         offsetTop = 50 - Number(scrollTop)
         document.querySelector('#sidebar').style.top = offsetTop + 'px'
       } else {
-        document.querySelector('#sidebar').style.top = '-128px'
+        document.querySelector('#sidebar').style.top = '0px'
       }
       // 右侧：推荐信息模块
       if (scrollTop <= 1748) {

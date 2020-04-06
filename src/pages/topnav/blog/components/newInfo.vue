@@ -1,13 +1,18 @@
 <template>
-  <div class="newRecommendInfoWrapper">
+  <div class="newRecommendInfoWrapper" v-show="newRecommendTip">
     <a class="tip">您有新的推荐内容，点击查看</a>
-    <span class="iconfont deleteIcon">&#xe621;</span>
+    <span class="iconfont deleteIcon" @click="newRecommendTip = false">&#xe621;</span>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'newInfo'
+  name: 'newInfo',
+  data () {
+    return {
+      newRecommendTip: true
+    }
+  }
 }
 </script>
 
@@ -32,4 +37,5 @@ export default {
     font-size 12px
     margin-left 16px
     color #ccc
+    cursor pointer
 </style>
