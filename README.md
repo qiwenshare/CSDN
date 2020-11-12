@@ -21,7 +21,7 @@ Vue.js, stylus,  Node.js, webpack, element UI, vue-awesome-swiper
 1. 拉取代码
 2. 安装依赖：npm install
 3. 启动：npm run dev，浏览器地址栏输入localhost:8080即可打开页面（端口可能会变化）
-4. 打包：npm run build
+4. 打包部署：npm run build，将根目录下的dist文件夹移入到nginx/html目录下，配置服务和端口，启动nginx，打开浏览器输入IP+端口即可打开页面
 
 
 ## 使用说明
